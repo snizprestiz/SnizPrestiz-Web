@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"outFile": "script.js",
+		"rootDir": "src",
+		"alwaysStrict": true,
+		"inlineSourceMap": true,
+		"removeComments": true
+	},
+	"exclude": [
+		"node_modules"
+	],
+	"compileOnSave": true
+}
