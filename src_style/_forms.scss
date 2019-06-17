@@ -1,0 +1,10 @@
+@import "colorPalette";
+
+::-ms-input-placeholder{
+	color: $accentColorLight;
+}
+
+::placeholder{
+	color: $accentColorLight;
+	opacity: 1;
+}

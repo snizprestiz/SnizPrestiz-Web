@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="koncept statistiky předmětu.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4946">
+      <stop
+         style="stop-color:#9bbde4;stop-opacity:0.30194804"
+         offset="0"
+         id="stop4942" />
+      <stop
+         style="stop-color:#9bbde4;stop-opacity:0"
+         offset="1"
+         id="stop4944" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4938"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4934"
+       is_visible="true" />
+    <linearGradient
+       id="linearGradient4522"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4520" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter4920">
+      <feFlood
+         flood-opacity="0.0862745"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood4910" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite4912" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="15"
+         result="blur"
+         id="feGaussianBlur4914" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset4916" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite4918" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4946"
+       id="linearGradient4948"
+       x1="101.41171"
+       y1="53.577599"
+       x2="101.41171"
+       y2="77.390106"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-18.520839)" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4934-5"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4938-7"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#f5f5f5"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.75"
+     inkscape:cx="414.25533"
+     inkscape:cy="935.27068"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.32291663;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4920)"
+       id="rect4518"
+       width="175.35733"
+       height="249.09091"
+       x="17.551344"
+       y="24.124792"
+       ry="5.2916665"
+       transform="matrix(0.98582221,0,0,1.1337387,1.4919291,-20.015657)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.7287"
+       y="20.766861"
+       id="text4924"><tspan
+         sodipodi:role="line"
+         id="tspan4922"
+         x="104.7287"
+         y="20.766861"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:6.3499999px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';stroke-width:0.26458332">Databázové systémy</tspan></text>
+    <path
+       style="fill:url(#linearGradient4948);fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 68.980801,36.385364 C 58.23581,36.379675 47.59185,38.492942 36.852531,38.842062 30.368187,39.052858 23.81021,38.606236 17.575671,36.815827 V 73.237895 H 193.14583 l -0.26458,-31.75 c -3.30258,0.570164 -6.40603,0.761254 -9.75186,0.567407 -9.66938,-0.560218 -18.90362,-4.29006 -28.53728,-5.291666 -13.91667,-1.446911 -27.77939,2.852401 -41.76644,3.212724 -14.672615,0.377984 -29.167387,-3.583196 -43.844869,-3.590996 z"
+       id="path4932"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccccsssc" />
+    <path
+       style="fill:none;stroke:#c78f00;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 17.386904,43.566948 c 9.382511,2.239057 19.099728,3.070136 28.72619,2.45685 6.256272,-0.398577 12.459908,-1.401631 18.709822,-1.88988 12.631749,-0.986804 25.362496,0.13511 37.986614,-0.94494 9.05599,-0.774781 17.9823,-2.676716 27.02529,-3.59078 12.79566,-1.293383 25.70385,-0.598769 38.55357,-1.13392 8.21836,-0.342269 16.4157,-1.188529 24.53066,-2.532445"
+       id="path4936"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect4938"
+       inkscape:original-d="m 17.386904,43.566948 c 9.638659,0.81869 19.151059,1.63764 28.72619,2.45685 9.575133,0.81921 12.473479,-1.26019 18.709822,-1.88988 6.236343,-0.6297 25.324668,-0.63023 37.986614,-0.94494 12.66193,-0.31472 18.01713,-2.39412 27.02529,-3.59078 9.00817,-1.19666 25.70265,-0.75621 38.55357,-1.13392 12.85093,-0.37772 16.08945,-1.713765 24.53066,-2.532445"
+       sodipodi:nodetypes="cscsssc" />
+    <path
+       style="fill:none;stroke:#0045c2;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.47077924"
+       d="m 17.575671,36.815827 c 6.374433,1.467347 12.925227,2.166946 19.465773,2.078869 10.744476,-0.144688 21.382668,-2.40173 32.127977,-2.456847 14.677793,-0.07529 29.171828,3.95724 43.845239,3.590774 13.98807,-0.349349 27.85238,-4.692287 41.76637,-3.212796 9.63236,1.024219 18.86236,4.813325 28.5372,5.291667 3.19739,0.158085 6.41276,-0.05024 9.56302,-0.619599"
+       id="path4932-3"
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 17.575671,36.815827 c 6.488855,0.69269 12.977446,1.385647 19.465773,2.078869 6.488327,0.693221 21.418917,-1.638163 32.127977,-2.456847 10.709061,-0.818682 29.230424,2.393585 43.845239,3.590774 14.61482,1.197189 27.84451,-2.14213 41.76637,-3.212796 13.92186,-1.070668 19.02507,3.527513 28.5372,5.291667 9.51214,1.764152 6.2245,-0.430877 9.56302,-0.619599"
+       inkscape:path-effect="#path-effect4934-5"
+       sodipodi:nodetypes="csssssc" />
+    <g
+       id="g5060"
+       transform="translate(-15.768902,-17.719032)">
+      <text
+         id="text4991-8-36"
+         y="78.859718"
+         x="39.14801"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:0.49675329;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.17499995px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#000000;fill-opacity:0.49675329;stroke-width:0.26458332"
+           y="78.859718"
+           x="39.14801"
+           id="tspan4989-5-8"
+           sodipodi:role="line">13/14</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4993-6-5"
+         d="M 39.223605,50.587089 V 75.15554"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.08116886" />
+    </g>
+    <g
+       id="g5060-5"
+       transform="translate(16.490531,-17.719032)">
+      <text
+         id="text4991-8-36-2"
+         y="78.859718"
+         x="39.14801"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:0.49675329;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.17499995px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#000000;fill-opacity:0.49675329;stroke-width:0.26458332"
+           y="78.859718"
+           x="39.14801"
+           id="tspan4989-5-8-2"
+           sodipodi:role="line">14/15</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4993-6-5-1"
+         d="M 39.223605,50.587089 V 75.15554"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.08116886" />
+    </g>
+    <g
+       id="g5060-3"
+       transform="translate(48.749971,-17.719032)">
+      <text
+         id="text4991-8-36-7"
+         y="78.859718"
+         x="39.14801"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:0.49675329;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.17499995px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#000000;fill-opacity:0.49675329;stroke-width:0.26458332"
+           y="78.859718"
+           x="39.14801"
+           id="tspan4989-5-8-8"
+           sodipodi:role="line">15/16</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4993-6-5-0"
+         d="M 39.223605,50.587089 V 75.15554"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.08116886" />
+    </g>
+    <g
+       id="g5060-55"
+       transform="translate(81.009403,-17.719032)">
+      <text
+         id="text4991-8-36-3"
+         y="78.859718"
+         x="39.14801"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:0.49675329;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.17499995px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#000000;fill-opacity:0.49675329;stroke-width:0.26458332"
+           y="78.859718"
+           x="39.14801"
+           id="tspan4989-5-8-7"
+           sodipodi:role="line">16/17</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4993-6-5-04"
+         d="M 39.223605,50.587089 V 75.15554"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.08116886" />
+    </g>
+    <g
+       id="g5060-1"
+       transform="translate(113.26883,-17.719032)">
+      <text
+         id="text4991-8-36-1"
+         y="78.859718"
+         x="39.14801"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:0.49675329;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.17499995px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#000000;fill-opacity:0.49675329;stroke-width:0.26458332"
+           y="78.859718"
+           x="39.14801"
+           id="tspan4989-5-8-5"
+           sodipodi:role="line">17/18</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4993-6-5-4"
+         d="M 39.223605,50.587089 V 75.15554"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.08116886" />
+    </g>
+    <g
+       id="g5060-57"
+       transform="translate(145.52826,-17.719032)">
+      <text
+         id="text4991-8-36-9"
+         y="78.859718"
+         x="39.14801"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:0.49675329;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.17499995px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#000000;fill-opacity:0.49675329;stroke-width:0.26458332"
+           y="78.859718"
+           x="39.14801"
+           id="tspan4989-5-8-28"
+           sodipodi:role="line">18/19</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4993-6-5-3"
+         d="M 39.223605,50.587089 V 75.15554"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.08116886" />
+    </g>
+    <g
+       id="g5143"
+       transform="translate(3.8300677,-16.593159)">
+      <rect
+         ry="2"
+         y="87.664429"
+         x="23.906992"
+         height="3"
+         width="3"
+         id="rect5134"
+         style="fill:#0045c2;fill-opacity:0.47058824;stroke:none;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text5138"
+         y="90.505432"
+         x="28.493111"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-size:3.52777767px;text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="90.505432"
+           x="28.493111"
+           id="tspan5136"
+           sodipodi:role="line">Procento úspěšných studentů</tspan></text>
+    </g>
+    <g
+       transform="translate(3.8300677,-10.016911)"
+       id="g5143-2">
+      <rect
+         ry="2"
+         y="87.664429"
+         x="23.906992"
+         height="3"
+         width="3"
+         id="rect5134-0"
+         style="fill:#c78f00;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text5138-2"
+         y="90.505432"
+         x="28.493111"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-size:3.52777767px;text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="90.505432"
+           x="28.493111"
+           id="tspan5136-4"
+           sodipodi:role="line">Počet přihlášených studentů</tspan></text>
+    </g>
+    <g
+       id="g5355"
+       transform="translate(0,-18.520839)">
+      <g
+         id="g5339">
+        <path
+           style="fill:none;fill-opacity:0.47058824;stroke:#2390ff;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.47077924"
+           id="path5169"
+           sodipodi:type="arc"
+           sodipodi:cx="44.978996"
+           sodipodi:cy="130.87938"
+           sodipodi:rx="15.403"
+           sodipodi:ry="15.40253"
+           sodipodi:start="4.712389"
+           sodipodi:end="3.7175513"
+           d="M 44.978997,115.47685 A 15.403,15.40253 0 0 1 59.90806,127.088 15.403,15.40253 0 0 1 52.328673,144.41539 15.403,15.40253 0 0 1 33.668227,141.33463 15.403,15.40253 0 0 1 32.060954,122.49056"
+           sodipodi:open="true" />
+        <path
+           style="fill:none;fill-opacity:0.47058824;stroke:#6df6ff;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.51298702"
+           id="path5265"
+           sodipodi:type="arc"
+           sodipodi:cx="44.979168"
+           sodipodi:cy="130.87946"
+           sodipodi:rx="11.46"
+           sodipodi:ry="11.46"
+           sodipodi:start="4.712389"
+           sodipodi:end="3.4732052"
+           sodipodi:open="true"
+           d="m 44.979168,119.41946 a 11.46,11.46 0 0 1 10.914456,7.96625 11.46,11.46 0 0 1 -4.2596,12.82351 11.46,11.46 0 0 1 -13.511656,-0.1474 11.46,11.46 0 0 1 -3.978843,-12.91338" />
+      </g>
+      <text
+         id="text5269"
+         y="120.48512"
+         x="67.049614"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan5271"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="120.48512"
+           x="67.049614"
+           sodipodi:role="line">Minulý rok uspělo <tspan
+   id="tspan5287"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#0045c2;fill-opacity:1">80%</tspan> studentů, o <tspan
+   id="tspan5323"
+   style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold'">3% více</tspan> </tspan><tspan
+           id="tspan5279"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="126.27085"
+           x="67.049614"
+           sodipodi:role="line">než je průměrná celková úspěšnost <tspan
+   id="tspan5307"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#00e7f7;fill-opacity:0.96103893">77%</tspan>.</tspan><tspan
+           id="tspan5281"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="132.05658"
+           x="67.049614"
+           sodipodi:role="line" /><tspan
+           id="tspan5283"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="137.78922"
+           x="67.049614"
+           sodipodi:role="line">Průměrná známka (včetně F) je <tspan
+   id="tspan5327"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold'">D</tspan> a nejčastější</tspan><tspan
+           id="tspan5285"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:start;text-anchor:start;stroke-width:0.26458332"
+           y="143.57494"
+           x="67.049614"
+           sodipodi:role="line">známka je <tspan
+   id="tspan5329"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold'">E</tspan> (30% studentů)</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:4.58611107px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#060088;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="65.389877"
+       y="196.53362"
+       id="text5275"><tspan
+         sodipodi:role="line"
+         id="tspan5273"
+         x="65.389877"
+         y="196.53362"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';fill:#060088;fill-opacity:1;stroke-width:0.26458332">HISTOGRAMY JEDNOTLIVÝCH ROKŮ</tspan></text>
+    <rect
+       style="fill:#c7dbff;fill-opacity:0.47058824;stroke:none;stroke-width:0.17537756;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5335"
+       width="74.319298"
+       height="63.888733"
+       x="27.063095"
+       y="209.98958" />
+    <g
+       id="g5355-7"
+       transform="translate(4.2763124,30.408561)">
+      <g
+         id="g5339-0"
+         transform="translate(110.75649,-1.0690781)">
+        <path
+           style="fill:none;fill-opacity:0.47058824;stroke:#e5c77e;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path5169-8"
+           sodipodi:type="arc"
+           sodipodi:cx="44.978996"
+           sodipodi:cy="130.87938"
+           sodipodi:rx="15.403"
+           sodipodi:ry="15.40253"
+           sodipodi:start="4.712389"
+           sodipodi:end="2.6529005"
+           d="m 44.978997,115.47685 a 15.403,15.40253 0 0 1 15.199087,12.90458 15.403,15.40253 0 0 1 -10.269175,17.09025 15.403,15.40253 0 0 1 -18.529955,-7.36125"
+           sodipodi:open="true" />
+        <path
+           style="fill:none;fill-opacity:0.47058824;stroke:#ffe880;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path5265-7"
+           sodipodi:type="arc"
+           sodipodi:cx="44.979168"
+           sodipodi:cy="130.87946"
+           sodipodi:rx="11.46"
+           sodipodi:ry="11.46"
+           sodipodi:start="4.712389"
+           sodipodi:end="1.9547688"
+           sodipodi:open="true"
+           d="m 44.979168,119.41946 a 11.46,11.46 0 0 1 10.574858,7.04366 11.46,11.46 0 0 1 -2.424408,12.4725 11.46,11.46 0 0 1 -12.443442,2.56936" />
+      </g>
+      <text
+         id="text5269-9"
+         y="121.34039"
+         x="133.50948"
+         style="font-style:normal;font-weight:normal;font-size:4.58611107px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan5271-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:end;text-anchor:end;stroke-width:0.26458332"
+           y="121.34039"
+           x="134.76349"
+           sodipodi:role="line">Minulý rok bylo přihlášeno <tspan
+   id="tspan5287-0"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';text-align:end;text-anchor:end;fill:#a47600;fill-opacity:1">312</tspan> studentů, o <tspan
+   id="tspan5323-6"
+   style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';text-align:end;text-anchor:end">10% více</tspan> </tspan><tspan
+           id="tspan5279-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:end;text-anchor:end;stroke-width:0.26458332"
+           y="127.12612"
+           x="133.50948"
+           sodipodi:role="line">než je průměrný počet studentů <tspan
+   id="tspan5307-8"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';text-align:end;text-anchor:end;fill:#d6c500;fill-opacity:1">280</tspan>.</tspan><tspan
+           id="tspan5281-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:end;text-anchor:end;stroke-width:0.26458332"
+           y="132.91185"
+           x="133.50948"
+           sodipodi:role="line" /><tspan
+           id="tspan5283-0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:end;text-anchor:end;stroke-width:0.26458332"
+           y="138.64449"
+           x="133.50948"
+           sodipodi:role="line">Průměrná známka (včetně F) je <tspan
+   id="tspan5327-4"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';text-align:end;text-anchor:end">D</tspan> a nejčastější</tspan><tspan
+           id="tspan5285-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:end;text-anchor:end;stroke-width:0.26458332"
+           y="144.43021"
+           x="133.50948"
+           sodipodi:role="line">známka je <tspan
+   id="tspan5329-4"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';text-align:end;text-anchor:end">E</tspan> (30% studentů)</tspan></text>
+    </g>
+    <rect
+       style="fill:#c7dbff;fill-opacity:0.47058824;stroke:none;stroke-width:0.17305365;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5335-4"
+       width="73.057365"
+       height="63.281284"
+       x="111.43172"
+       y="210.59702" />
+  </g>
+</svg>

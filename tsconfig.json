@@ -1,13 +1,10 @@
 {
 	"compilerOptions": {
-		"outFile": "script.js",
-		"rootDir": "src",
 		"alwaysStrict": true,
-		"inlineSourceMap": true,
-		"removeComments": true
-	},
-	"exclude": [
-		"node_modules"
-	],
-	"compileOnSave": true
+		"removeComments": true,
+		"target": "es5",
+		"module": "commonjs",
+		"sourceMap": true,
+		"moduleResolution": "node",
+	}
 }
