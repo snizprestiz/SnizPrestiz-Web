@@ -14,7 +14,7 @@
         "ecmaVersion": 2018
     },
     "rules": {
-        "indent": [
+        "@typescript-eslint/indent": [
             "error",
             "tab"
         ],
@@ -24,9 +24,9 @@
         ],
         "quotes": [
             "error",
-            "double"
+            "backtick"
         ],
-        "semi": [
+        "@typescript-eslint/semi": [
             "error",
             "always"
         ]

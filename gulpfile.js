@@ -1,40 +1,55 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const tsc = require('gulp-typescript');
+const gulp = require("gulp");
+const sass = require("gulp-sass");
 const browserify = require("browserify");
 const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify");
+const tsify = require('tsify');
 
+let buildDebug = true;
 
-gulp.task('build-sass', () => gulp.src('src_style/*.scss')
+gulp.task("sass", () => gulp.src("Style/**/*.scss")
 	.pipe(sass({
 		outputStyle: "compressed",
 		sourceMapEmbed: true
 	}))
-	.pipe(gulp.dest("./"))
+	.pipe(gulp.dest("Build/"))
 );
 
-const tscProject = tsc.createProject('tsconfig.json');
-gulp.task('build-typescript', () => gulp.src('src_script/**/*.ts')
-	.pipe(tscProject())
-	.js.pipe(gulp.dest("src_script/"))
-);
-
-gulp.task("browserify-typescript", () => browserify({debug: true})
-	.add("src_script/index.js")
+gulp.task("browserify-typescript", () => browserify({ debug: buildDebug })
+	.add("Script/Main.ts")
+	.plugin(tsify, {
+		noImplicitAny: true,
+		module: "commonjs",
+		moduleResolution: "node",
+		target: "es5",
+		removeComments: true
+	})
+	.transform('uglifyify')
 	.bundle()
 	.pipe(source("index.js"))
 	.pipe(buffer())
-	.pipe(sourcemaps.init({ loadMaps: true }))
-	//.pipe(uglify())
-	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest('./'))
+	.pipe(gulp.dest("Build/"))
 );
 
-gulp.task('watch', () => {
-    gulp.watch('src_style/*.scss', {usePolling: true}, gulp.series('build-sass'));
-    gulp.watch('src_script/**/*.ts', {usePolling: true}, gulp.series('build-typescript'));
-    gulp.watch('src_script/index.js', {usePolling: true}, gulp.series('browserify-typescript'));
+gulp.task("bundle-static", () => gulp.src("Static/**/*")
+	.pipe(gulp.dest("Build"))
+);
+
+gulp.task("debug", (done) => {
+	buildDebug = true;
+	gulp.series("sass", "browserify-typescript", "bundle-static")();
+	if(done) done();
+});
+
+gulp.task("release", (done) => {
+	buildDebug = false;
+	gulp.series("sass", "browserify-typescript", "bundle-static")();
+	if(done) done();
+});
+
+gulp.task("watch", () => {
+	gulp.task("debug")();
+	gulp.watch("Style/**/*.scss", { usePolling: true }, gulp.task("sass"));
+	gulp.watch("Script/**/*.ts", { usePolling: true }, gulp.series("browserify-typescript"));
+	gulp.watch("Static/**/*", { usePolling: true }, gulp.task("bundle-static"));
 });

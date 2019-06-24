@@ -1,14 +1,10 @@
 {
-	"name": "snizprestiz",
+	"name": "snizprestiz-web",
 	"version": "0.0.1",
-	"description": "Web pro usnadnění přípravy na zkoušky VUT FIT",
-	"main": "build/index.js",
-	"scripts": {
-		"start": "node build/index.js"
-	},
+	"description": "Web pro komunikaci o předmětech na VUT FIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/janch32/SnizPrestiz.git"
+		"url": "git+https://github.com/janch32/SnizPrestiz-Web.git"
 	},
 	"author": {
 		"name": "Jan Chaloupka",
@@ -17,9 +13,9 @@
 	},
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/janch32/SnizPrestiz/issues"
+		"url": "https://github.com/janch32/SnizPrestiz-Web/issues"
 	},
-	"homepage": "https://github.com/janch32/SnizPrestiz",
+	"homepage": "https://github.com/janch32/SnizPrestiz-Web",
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^1.9.0",
 		"@typescript-eslint/parser": "^1.9.0",
@@ -27,13 +23,12 @@
 		"eslint": "^5.16.0",
 		"gulp": "^4.0.2",
 		"gulp-sass": "^4.0.2",
-		"gulp-sourcemaps": "^2.6.5",
-		"gulp-typescript": "^5.0.1",
-		"gulp-uglify": "^3.0.2",
 		"node-sass": "^4.12.0",
 		"typescript": "^3.4.5",
+		"tsify": "^4.0.1",
 		"vinyl-buffer": "^1.0.1",
-		"vinyl-source-stream": "^2.0.0"
+		"vinyl-source-stream": "^2.0.0",
+		"uglifyify": "^5.0.1"
 	},
 	"dependencies": {
 		"ts-keycode-enum": "^1.0.6",

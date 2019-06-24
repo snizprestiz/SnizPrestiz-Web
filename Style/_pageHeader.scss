@@ -1,0 +1,105 @@
+@import "colorPalette";
+
+.PageHeader{
+	border-top: 3px solid $accentColorNormal;
+	box-shadow: 0px 0px 150px 120px $backColorLight;
+	background: $backColorLight;
+	padding: 0px 20px;
+	
+	section{
+		display: flex;
+		align-items: flex-end;
+		height: 120px;
+	}
+
+	.PageLogo{
+		font-weight: 700;
+		font-family: 'Fira Mono', monospace;
+		font-size: 28px;
+		text-decoration: none;
+		display: block;
+		padding: 5px;
+		align-self: center;
+		color: $accentColorDark;
+
+		&:hover, &:focus{
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		&:after{
+			content: '_';
+		}
+
+		&.finished:after{
+			animation: cursor 1s 4;
+			animation-timing-function: steps(1);
+			animation-delay: 500ms;
+			opacity: 0;
+			animation-fill-mode: backwards;
+		}
+
+		@keyframes cursor {
+			0%{opacity: 1;}
+			50%{opacity: 0;}
+			100%{opacity: 1;}
+		}
+	}
+	
+	nav{
+		display: flex;
+		margin: auto;
+		margin-right: 0;
+
+		a{
+			text-decoration: none;
+			color: $accentColorDark;
+			display: flex;
+			align-items: center;
+			margin: auto 12px;
+			padding: 5px;
+			
+			&:hover, &:focus{
+				color: inherit;
+			}
+
+			i{
+				padding-right: 8px;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.searchInputContainer{
+		display: flex;
+		border: 1.3px solid $accentColorDark;
+		border-radius: 1000px;
+		margin: auto 0;
+		margin-left: 10px;
+
+		input{
+			background: none;
+			border: none;
+			font-family: inherit;
+			font-size: inherit;
+			color: inherit;
+			padding: 10px 20px;
+			padding-right: 0;
+			width: 220px;
+		}
+
+		i{
+			padding: 0 20px 0 5px;
+			font-size: 20px;
+			color: $accentColorDark;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+
+			&:hover, &:focus{
+				color: $foreColorNormal;
+				font-weight: 900;
+			}
+		}
+	}
+}

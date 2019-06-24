@@ -1,0 +1,16 @@
+@import "colorPalette";
+
+@mixin cardLarge {
+	background: $backColorLight;
+	border-radius: 16px;
+	box-shadow: 2px 2px 70px rgba(0, 0, 0, 0.1);
+	padding: 48px;
+}
+
+@mixin serifFont {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+@mixin monospaceFont {
+	font-family: 'Fira Mono', monospace;
+}
