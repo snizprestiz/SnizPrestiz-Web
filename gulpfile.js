@@ -10,7 +10,7 @@ let buildDebug = true;
 gulp.task("sass", () => gulp.src("Style/**/*.scss")
 	.pipe(sass({
 		outputStyle: "compressed",
-		sourceMapEmbed: true
+		sourceMapEmbed: buildDebug
 	}))
 	.pipe(gulp.dest("Build/"))
 );
@@ -24,7 +24,7 @@ gulp.task("browserify-typescript", () => browserify({ debug: buildDebug })
 		target: "es5",
 		removeComments: true
 	})
-	.transform('uglifyify')
+	.plugin("tinyify")
 	.bundle()
 	.pipe(source("index.js"))
 	.pipe(buffer())

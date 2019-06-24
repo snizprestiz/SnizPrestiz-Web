@@ -28,7 +28,7 @@
 		"tsify": "^4.0.1",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0",
-		"uglifyify": "^5.0.1"
+		"tinyify": "^2.5.1"
 	},
 	"dependencies": {
 		"ts-keycode-enum": "^1.0.6",
