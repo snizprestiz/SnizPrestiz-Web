@@ -1,6 +1,8 @@
-export class DpiAwareCanvas{
-	private _HTMLElement: HTMLCanvasElement;
-	public get HTMLElement(): HTMLCanvasElement { return this._HTMLElement; }
+import { Element } from "./Basic/Element";
+
+export class DpiAwareCanvas extends Element{
+	public get TagName(): string { return `canvas`; }
+	protected Root: HTMLCanvasElement;
 	
 	private _DoRenderLoop: boolean;
 	public set DoRenderLoop(value: boolean) {
@@ -10,20 +12,20 @@ export class DpiAwareCanvas{
 	
 	private _Context: CanvasRenderingContext2D;
 	public get Context(): CanvasRenderingContext2D { return this._Context; }
-	public get Width(): number { return this._HTMLElement.width / devicePixelRatio; };
-	public get Height(): number { return this._HTMLElement.height / devicePixelRatio; };
+	public get Width(): number { return this.Root.width / devicePixelRatio; };
+	public get Height(): number { return this.Root.height / devicePixelRatio; };
 
 	public constructor() {
-		this._HTMLElement = document.createElement(`canvas`);
+		super();
 		window.addEventListener(`resize`, (): void => this.ResizeEvent());
 		this.ResizeEvent();
 	}
 
 	public ResizeEvent(redraw: boolean = true): void{
-		this._HTMLElement.width = this._HTMLElement.clientWidth * devicePixelRatio;
-		this._HTMLElement.height = this._HTMLElement.clientHeight * devicePixelRatio;
+		this.Root.width = this.Root.clientWidth * devicePixelRatio;
+		this.Root.height = this.Root.clientHeight * devicePixelRatio;
 
-		let context = this._HTMLElement.getContext(`2d`);
+		let context = this.Root.getContext(`2d`);
 		context.scale(devicePixelRatio, devicePixelRatio);
 		this._Context = context;
 

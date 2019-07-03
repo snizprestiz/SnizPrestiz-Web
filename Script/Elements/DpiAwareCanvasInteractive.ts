@@ -1,5 +1,5 @@
 import { DpiAwareCanvas } from "./DpiAwareCanvas";
-import { Point } from "./Types/Point";
+import { Point } from "../Types/Point";
 
 export class DpiAwareCanvasInteractive extends DpiAwareCanvas{
 	public MousePos: Point = {X: 0, Y: 0};
@@ -9,23 +9,13 @@ export class DpiAwareCanvasInteractive extends DpiAwareCanvas{
 	public constructor() {
 		super();
 
-		this.HTMLElement.addEventListener(
-			`mouseenter`,
-			(): void => this.MouseHoverEvent(true)
-		);
+		this.Root.onmouseenter = (): void => this.MouseHoverEvent(true);
+		this.Root.onmouseleave = (): void => this.MouseHoverEvent(false);
 		
-		this.HTMLElement.addEventListener(
-			`mouseleave`,
-			(): void => this.MouseHoverEvent(false)
-		);
-		
-		this.HTMLElement.addEventListener(
-			`mousemove`,
-			(e): void => this.MouseMoveEvent({
-				X: e.offsetX,
-				Y: e.offsetY
-			})
-		);
+		this.Root.onmousemove = (e): void => this.MouseMoveEvent({
+			X: e.offsetX,
+			Y: e.offsetY
+		});
 	}
 
 	protected MouseMoveEvent(position: Point): void{

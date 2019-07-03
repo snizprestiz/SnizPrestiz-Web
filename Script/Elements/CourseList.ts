@@ -1,29 +1,35 @@
-import { Element } from "./Element";
+import { Element } from "./Basic/Element";
+import { Heading } from "./Basic/Heading";
+import { HeadingLevel } from "./Basic/HeadingLevel";
+import { Header } from "./Basic/Header";
+import { Paragraph } from "./Basic/Paragraph";
 
 export class CourseList extends Element{
 	public get ClassName(): string { return `CourseList`; }
-	private Header: HTMLElement;
-	private MyCoursesContainer: HTMLElement;
-	private AllCoursesContainer: HTMLElement;
+	
+	private MyCoursesContainer: Element;
+	private AllCoursesContainer: Element;
 	//private MyCourses: any;
 	//private AllCourses: any;
 
 	public constructor() {
 		super();
 		
-		this.Header = document.createElement(`header`);
-		this.Header.innerHTML = `<h1>Seznam předmětů</h1><p>Hello World!</p>`;
+		this.MyCoursesContainer = new Element();
+		this.MyCoursesContainer.DOM.className = `coursesContainer myCourses`;
 		
-		this.MyCoursesContainer = document.createElement(`div`);
-		this.MyCoursesContainer.classList.add(`coursesContainer`, `myCourses`);
+		this.AllCoursesContainer = new Element();
+		this.AllCoursesContainer.DOM.className = `coursesContainer allCourses`;
 		
-		this.AllCoursesContainer = document.createElement(`div`);
-		this.AllCoursesContainer.classList.add(`coursesContainer`, `allCourses`);
-		
-		this.Root.append(this.Header);
-		this.Root.insertAdjacentHTML(`beforeend`, `<h2>Moje předměty</h2>`);
-		this.Root.append(this.MyCoursesContainer);
-		this.Root.insertAdjacentHTML(`beforeend`, `<h2>Všechny předměty</h2>`);
-		this.Root.append(this.AllCoursesContainer);
+		this.Children.push(
+			new Header(
+				new Heading(HeadingLevel.Title, `Seznam předmětů`),
+				new Paragraph(`Hello world!`)
+			),
+			new Heading(HeadingLevel.Section, `Moje předměty`),
+			this.MyCoursesContainer,
+			new Heading(HeadingLevel.Section, `Všechny předměty`),
+			this.AllCoursesContainer
+		);
 	}
 }

@@ -1,15 +1,15 @@
 @import "colorPalette";
 
 .PageHeader{
-	border-top: 3px solid $accentColorNormal;
-	box-shadow: 0px 0px 150px 120px $backColorLight;
-	background: $backColorLight;
-	padding: 0px 20px;
+	display: flex;
+	align-items: flex-end;
+	height: 120px;
 	
-	section{
-		display: flex;
-		align-items: flex-end;
-		height: 120px;
+	&-wrapper{
+		border-top: 3px solid $accentColorNormal;
+		box-shadow: 0px 0px 150px 120px $backColorLight;
+		background: $backColorLight;
+		padding: 0px 20px;
 	}
 
 	.PageLogo{
@@ -70,14 +70,14 @@
 		}
 	}
 
-	.searchInputContainer{
+	.SearchInput{
 		display: flex;
 		border: 1.3px solid $accentColorDark;
 		border-radius: 1000px;
 		margin: auto 0;
 		margin-left: 10px;
 
-		input{
+		input[type=search]{
 			background: none;
 			border: none;
 			font-family: inherit;
@@ -86,15 +86,22 @@
 			padding: 10px 20px;
 			padding-right: 0;
 			width: 220px;
+			border-top-left-radius: inherit;
+			border-bottom-left-radius: inherit;
 		}
 
-		i{
+		input[type=submit]{
 			padding: 0 20px 0 5px;
 			font-size: 20px;
 			color: $accentColorDark;
+			font-family: 'Font Awesome 5 Pro';
+			border: none;
+			background: transparent;
 			cursor: pointer;
 			display: flex;
 			align-items: center;
+			border-top-right-radius: inherit;
+			border-bottom-right-radius: inherit;
 
 			&:hover, &:focus{
 				color: $foreColorNormal;

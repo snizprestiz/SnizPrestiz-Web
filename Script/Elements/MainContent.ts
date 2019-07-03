@@ -1,19 +1,21 @@
-import { ElementWithSection } from "./ElementWithSection";
+import { WidthLimitedElement } from "./Basic/WidthLimitedElement";
 import { CourseList } from "./CourseList";
 import { CourseStatistics } from "./CourseStatistics";
 
-export class MainContent extends ElementWithSection{
+export class MainContent extends WidthLimitedElement{
+	public get TagName(): string { return `main`; }
 	public get ClassName(): string { return `MainContent`; }
+
 	private Courses: CourseList;
 	private CourseStatistics: CourseStatistics;
 
 	public constructor() {
-		super(`main`);
+		super();
 
-		this.Courses = new CourseList();
-		//this.Inner.append(this.Courses.RootHTMLElement);
+		//this.Courses = new CourseList();
+		//this.Children.push(this.Courses);
 
 		this.CourseStatistics = new CourseStatistics(`IOS`, `Operační systémy`);
-		this.Inner.append(this.CourseStatistics.RootHTMLElement);
+		this.Children.push(this.CourseStatistics);
 	}
 }

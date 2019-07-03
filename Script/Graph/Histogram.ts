@@ -1,4 +1,4 @@
-import { DpiAwareCanvas } from "../DpiAwareCanvas";
+import { DpiAwareCanvas } from "../Elements/DpiAwareCanvas";
 import { GraphData, DistributionLabels } from "./GraphData";
 
 export class Histogram extends DpiAwareCanvas{
@@ -23,7 +23,7 @@ export class Histogram extends DpiAwareCanvas{
 	public constructor(data?: GraphData) {
 		super();
 
-		this.HTMLElement.classList.add(`Histogram`);
+		this.Root.classList.add(`Histogram`);
 		if (data) this.Data = data;
 	}
 

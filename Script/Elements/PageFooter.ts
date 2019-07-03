@@ -1,14 +1,16 @@
-import { Element } from "./Element";
+import { Link } from "./Basic/Link";
+import { LinkTarget } from "./Basic/LinkTarget";
+import { Footer } from "./Basic/Footer";
+import { Element } from "./Basic/Element";
 
-export class PageFooter extends Element{
+export class PageFooter extends Footer{
 	public get ClassName(): string { return `PageFooter`; }
 	public constructor() {
-		super(`footer`);
-
-		this.Root.innerHTML = `
-			Sniž prestiž, 2019<br>
-			<a href='https://github.com'>GitHub</a>,
-			<a href='https://github.com/issues'>Issue Tracker</a>
-			`;
+		super(
+			new Element(`Sniž prestiž, 2019`),
+			new Link(`https://github.com/snizprestiz`, LinkTarget.NewTab, `GitHub`),
+			`, `,
+			new Link(`https://github.com/snizprestiz/snizprestiz-web/issues`, LinkTarget.NewTab, `Issue tracker`)
+		);
 	}
 }

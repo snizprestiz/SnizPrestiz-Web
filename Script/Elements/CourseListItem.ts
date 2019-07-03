@@ -1,16 +1,25 @@
-import { Element } from "./Element";
+import { Element } from "./Basic/Element";
 
 export class CourseListItem extends Element{
 	public get ClassName(): string { return `CourseListItem`; }
-	private CodeHTML: HTMLElement;
-	private NameHTML: HTMLElement;
-	private ThreadCountHTML: HTMLElement;
+
+	private AbbrElement: Element;
+	private NameElement: Element;
+	private ThreadsElement: Element;
 	
-	public get Code(): string{
+	public get Abbr(): string {
 		return `NaN`;
 	}
 
-	public set Code(v: string) {
+	public set Abbr(v: string) {
+		
+	}
+
+	public get Name(): string{
+		return `NaN`;
+	}
+
+	public set Name(v: string) {
 		
 	}
 	
@@ -19,7 +28,9 @@ export class CourseListItem extends Element{
 	}
 	
 	public set Favourite(v: boolean) {
-		if(v)
+		// TODO Fav API
+
+		if (v)
 			this.Root.classList.add(`favourite`);
 		else
 			this.Root.classList.remove(`favourite`);
@@ -28,15 +39,19 @@ export class CourseListItem extends Element{
 	public constructor() {
 		super();
 
-		this.CodeHTML = document.createElement(`div`);
-		this.CodeHTML.classList.add(`code`);
+		this.AbbrElement = new Element();
+		this.AbbrElement.DOM.className = `code`;
 
-		this.NameHTML = document.createElement(`div`);
-		this.NameHTML.classList.add(`name`);
+		this.NameElement = new Element();
+		this.NameElement.DOM.className = `name`;
 
-		this.ThreadCountHTML = document.createElement(`div`);
-		this.ThreadCountHTML.classList.add(`threadCount`);
+		this.ThreadsElement = new Element();
+		this.ThreadsElement.DOM.className = `threadCount`;
 
-		this.Root.append(this.CodeHTML, this.NameHTML, this.ThreadCountHTML);
+		this.Children.push(
+			this.AbbrElement,
+			this.NameElement,
+			this.ThreadsElement
+		);
 	}
 }

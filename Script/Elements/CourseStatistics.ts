@@ -1,14 +1,18 @@
-import { Element } from "./Element";
+import { Element } from "./Basic/Element";
 import { OverviewGraph } from "../Graph/OverviewGraph";
 import { GraphDataByYear } from "../Graph/GraphDataByYear";
 import { GraphParser } from "../Graph/DataParser/GraphParser";
 import { Histogram } from "../Graph/Histogram";
+import { Header } from "./Basic/Header";
+import { Heading } from "./Basic/Heading";
+import { HeadingLevel } from "./Basic/HeadingLevel";
+import { InlineElement } from "./Basic/InlineElement";
 
 export class CourseStatistics extends Element{
 	public get ClassName(): string { return `CourseStatistics`; }
-	private Header: HTMLElement;
+	
 	private OverviewGraph: OverviewGraph;
-	private YearlyGraphs: HTMLElement;
+	private YearlyGraphs: Element;
 
 	private CourseAbbr: string;
 	private CourseName: string;
@@ -19,26 +23,34 @@ export class CourseStatistics extends Element{
 
 		this.CourseAbbr = courseAbbr;
 		this.CourseName = courseName;
-
-		this.Header = document.createElement(`header`);
-		this.Header.innerHTML = `<h1><abbr>${this.CourseAbbr}</abbr> ${this.CourseName}</h1>`;
-
 		this.OverviewGraph = new OverviewGraph();
-		this.YearlyGraphs = document.createElement(`div`);
+		this.YearlyGraphs = new Element();
+
+		let graphLegendPrimary = new Element(`Procento úspěšných studentů`);
+		graphLegendPrimary.DOM.className = `GraphLabel primary`;
+		let graphLegendSecondary = new Element(`Počet přihlášených studentů`);
+		graphLegendSecondary.DOM.className = `GraphLabel secondary`;
 		
-		this.Root.append(this.Header);
-		this.Root.append(this.OverviewGraph.HTMLElement);
-		this.Root.insertAdjacentHTML(`beforeend`, `<div class='GraphLabel primary'>Procento úspěšných studentů</div>`);
-		this.Root.insertAdjacentHTML(`beforeend`, `<div class='GraphLabel secondary'>Počet přihlášených studentů</div>`);
-		this.Root.insertAdjacentHTML(`beforeend`, `<h2>Histogramy jednotlivých roků</h2>`);
-		this.Root.append(this.YearlyGraphs);
+		this.Children.push(
+			new Header(
+				new Heading(HeadingLevel.Title,
+					new InlineElement(this.CourseAbbr),
+					this.CourseName
+				)
+			),
+			this.OverviewGraph,
+			graphLegendPrimary,
+			graphLegendSecondary,
+			new Heading(HeadingLevel.Section, `Histogramy jednotlivých roků`),
+			this.YearlyGraphs
+		);
 
 		this.LoadGraphData();
 	}
 
 	private AddHistogram(data: GraphDataByYear): void {
 		let histogram = new Histogram(data);
-		this.YearlyGraphs.append(histogram.HTMLElement);
+		this.YearlyGraphs.Children.push(histogram);
 		//this.YearlyGraphs.insertAdjacentHTML("afterbegin", `<h3>${data.Year}</h3>`)
 		histogram.ResizeEvent();
 	}
@@ -49,7 +61,7 @@ export class CourseStatistics extends Element{
 			return;
 		}
 
-		GraphParser.FromUrl(`../DevAssets/${this.CourseAbbr}${year}.png`).then((data): void => {
+		GraphParser.FromUrl(`/${this.CourseAbbr}${year}.png`).then((data): void => {
 			let dataByYear = new GraphDataByYear(year, data);
 			this.GraphData.push(dataByYear);
 			this.AddHistogram(dataByYear);

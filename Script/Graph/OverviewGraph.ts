@@ -1,6 +1,6 @@
 import { GraphDataByYear } from "./GraphDataByYear";
 import { String } from "typescript-string-operations";
-import { DpiAwareCanvasInteractive } from "../DpiAwareCanvasInteractive";
+import { DpiAwareCanvasInteractive } from "../Elements/DpiAwareCanvasInteractive";
 
 export class OverviewGraph extends DpiAwareCanvasInteractive{
 	private AnimationDuration = 1000;
@@ -30,7 +30,7 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 	public constructor() {
 		super();
-		this.HTMLElement.classList.add(`OverviewGraph`);
+		this.Root.classList.add(`OverviewGraph`);
 	}
 
 	private GetGraphY(value: number, max: number): number {

@@ -1,7 +1,8 @@
-import { Element } from "./Element";
+import { Link } from "./Basic/Link";
 
-export class PageLogo extends Element{
-	public get ClassName(): string { return `PageLogo`; }	
+export class PageLogo extends Link{
+	public get ClassName(): string { return `PageLogo`; };
+	
 	public static AnimationInitialDelay = 800;
 	public static AvailableTexts = [
 		`prestiz--;`,
@@ -18,22 +19,18 @@ export class PageLogo extends Element{
 		`prestiz += 0xFFFFFFFF;`
 	];
 
-	protected Root: HTMLAnchorElement;
 	private FinalText: string;
 	private CharsDisplayed: number;
 
 	public constructor() {
-		super(`a`);
-		this.Root.title = `Sniž prestiž`;
-		this.Root.href = `/`;
+		super(`/`);
+		this.Tooltip = `Sniž prestiž`;
 	}
-
 	
-	public get RootHTMLElement(): HTMLElement {
+	public get DOM(): HTMLElement {
 		this.AnimateLogo();
 		return this.Root;
 	}
-	
 	
 	public AnimateLogo(): void {
 		let randomIndex = Math.floor(Math.random() * PageLogo.AvailableTexts.length);
