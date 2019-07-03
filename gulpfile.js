@@ -22,7 +22,8 @@ gulp.task("browserify-typescript", () => browserify({ debug: buildDebug })
 		module: "commonjs",
 		moduleResolution: "node",
 		target: "es5",
-		removeComments: true
+		removeComments: true,
+		lib: ["es2015", "dom"]
 	})
 	.plugin("tinyify")
 	.bundle()

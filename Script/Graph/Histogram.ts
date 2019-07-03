@@ -15,6 +15,7 @@ export class Histogram extends DpiAwareCanvas{
 			value.PointsDistribution[0] + value.PointsDistribution[1]
 		);
 		
+		// Maximum je 8/7 velikosti největšího sloupce aby se tam vešla i legenda
 		this.MaxPoints = Math.ceil(this.MaxPoints * (8 / 7) / 10) * 10;
 		this.ResizeEvent();
 	}

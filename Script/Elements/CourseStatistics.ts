@@ -49,7 +49,7 @@ export class CourseStatistics extends Element{
 			return;
 		}
 
-		GraphParser.FromUrl(`/${this.CourseAbbr}${year}.png`, (data): void => {
+		GraphParser.FromUrl(`../DevAssets/${this.CourseAbbr}${year}.png`).then((data): void => {
 			let dataByYear = new GraphDataByYear(year, data);
 			this.GraphData.push(dataByYear);
 			this.AddHistogram(dataByYear);

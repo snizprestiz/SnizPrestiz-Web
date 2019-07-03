@@ -8,11 +8,11 @@ export class GraphParser{
 		return GraphImageParser.GetGraphData(image);
 	}
 
-	public static FromUrl(url: string, callback: (data: GraphData) => void): void{
-		GraphUrlParser.GetGraphData(url, callback);
+	public static async FromUrl(url: string): Promise<GraphData>{
+		return GraphUrlParser.GetGraphData(url);
 	}
 
-	public static ByCourseId(courseId: number, callback: (data: GraphData) => void): void{
-		GraphCourseParser.GetGraphData(courseId, callback);
+	public static async ByCourseId(courseId: number): Promise<GraphData>{
+		return GraphCourseParser.GetGraphData(courseId);
 	}
 }
