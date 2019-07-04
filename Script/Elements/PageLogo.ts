@@ -1,4 +1,5 @@
 import { Link } from "./Basic/Link";
+import { String } from "typescript-string-operations";
 
 export class PageLogo extends Link{
 	public get ClassName(): string { return `PageLogo`; };
@@ -28,13 +29,26 @@ export class PageLogo extends Link{
 	}
 	
 	public get DOM(): HTMLElement {
-		this.AnimateLogo();
+		if (document.referrer == String.Empty ||
+			new URL(document.referrer).hostname != location.hostname)
+			this.AnimateLogo();
+		else this.ShowWithoutAnimation();
 		return this.Root;
+	}
+
+	private ShowWithoutAnimation(): void {
+		let lastIndex = localStorage.getItem(`LastAnimationIndex`);
+		if(lastIndex != null && Number(lastIndex) < PageLogo.AvailableTexts.length)
+			this.Root.textContent = PageLogo.AvailableTexts[Number(lastIndex)];
+		else
+			this.Root.textContent = PageLogo.AvailableTexts[Math.floor(Math.random() * PageLogo.AvailableTexts.length)];
+		
+		this.Root.classList.add(`finished`, `skip-animation`);
 	}
 	
 	public AnimateLogo(): void {
 		let randomIndex = Math.floor(Math.random() * PageLogo.AvailableTexts.length);
-
+		localStorage.setItem(`LastAnimationIndex`, randomIndex.toString());
 		this.FinalText = PageLogo.AvailableTexts[randomIndex];
 		this.CharsDisplayed = 0;
 

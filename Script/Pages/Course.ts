@@ -15,12 +15,12 @@ export class Course extends Page{
 
 	public constructor(abbr: string) {
 		super();
-		this.Abbr = abbr;
+		this.Abbr = abbr.toUpperCase();
 
 		this.RootElement = new WidthLimitedElement(
 			new Header(
 				new Heading(HeadingLevel.Title,
-					new Abbreviation(abbr),
+					new Abbreviation(this.Abbr),
 					`Název předmětu`
 				)
 			),
