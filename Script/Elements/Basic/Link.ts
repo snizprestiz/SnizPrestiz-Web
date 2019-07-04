@@ -1,6 +1,7 @@
 import { LinkTarget } from "./LinkTarget";
 import { Element } from "./Element";
 import { Child } from "./Child";
+import { Navigation } from "../../Navigation";
 
 export class Link extends Element{
 	protected Root: HTMLAnchorElement;
@@ -26,6 +27,15 @@ export class Link extends Element{
 	public constructor(url: string, target: LinkTarget = LinkTarget.Default, ...children: Child[]) {
 		super(...children);
 		this.Root.target = target;
-		if(url) this.URL = url;
+		this.Root.onclick = (e): void => this.NavigateEvent(e);
+		if (url) this.URL = url;
+	}
+		
+	private NavigateEvent(e: MouseEvent): void {
+		if (this.Root.hostname != location.hostname && !!this.Root.hostname.length)
+			return;
+		
+		e.preventDefault();
+		Navigation.Navigate(this.Root.pathname);
 	}
 }

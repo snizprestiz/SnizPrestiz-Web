@@ -6,7 +6,7 @@ import { Histogram } from "../Graph/Histogram";
 import { Header } from "./Basic/Header";
 import { Heading } from "./Basic/Heading";
 import { HeadingLevel } from "./Basic/HeadingLevel";
-import { InlineElement } from "./Basic/InlineElement";
+import { Abbreviation } from "./Abbreviation";
 
 export class CourseStatistics extends Element{
 	public get ClassName(): string { return `CourseStatistics`; }
@@ -34,7 +34,7 @@ export class CourseStatistics extends Element{
 		this.Children.push(
 			new Header(
 				new Heading(HeadingLevel.Title,
-					new InlineElement(this.CourseAbbr),
+					new Abbreviation(this.CourseAbbr),
 					this.CourseName
 				)
 			),

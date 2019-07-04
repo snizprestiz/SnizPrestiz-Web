@@ -1,0 +1,13 @@
+/courselist
+
+/course/ios?filter=1,4,7&offset=10
+/course/ios/stats
+/course/ios/thread/105?offset=20
+
+/search/search+query+goes+here
+
+/settings
+
+/login
+
+/register

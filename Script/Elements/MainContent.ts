@@ -1,21 +1,18 @@
-import { WidthLimitedElement } from "./Basic/WidthLimitedElement";
-import { CourseList } from "./CourseList";
-import { CourseStatistics } from "./CourseStatistics";
+import { Element } from "./Basic/Element";
+import { Page } from "../Pages/Page";
+import { Observer } from "../Observer";
 
-export class MainContent extends WidthLimitedElement{
+export class MainContent extends Element{
 	public get TagName(): string { return `main`; }
 	public get ClassName(): string { return `MainContent`; }
 
-	private Courses: CourseList;
-	private CourseStatistics: CourseStatistics;
-
 	public constructor() {
 		super();
+		Observer.RegisterPageChange((curr): void => this.ChangePage(curr));
+	}
 
-		//this.Courses = new CourseList();
-		//this.Children.push(this.Courses);
-
-		this.CourseStatistics = new CourseStatistics(`IOS`, `Operační systémy`);
-		this.Children.push(this.CourseStatistics);
+	public ChangePage(curr: Page): void{
+		this.Children.splice(0, this.Children.length);
+		this.Children.push(curr.Main);
 	}
 }

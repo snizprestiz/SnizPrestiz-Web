@@ -21,6 +21,12 @@ export class Element{
 	public set Tooltip(text: string) {
 		this.Root.title = text;
 	}
+
+	public get Text(): string { return this.Root.textContent; }
+	public set Text(text: string) {
+		this.Children.splice(0, this.Children.length);
+		this.Children.push(text);
+	}
 	
 	public constructor(...children: Child[]) {
 		this.Root = document.createElement(this.TagName);
