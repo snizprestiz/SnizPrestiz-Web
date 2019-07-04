@@ -26,11 +26,6 @@ export class CourseStatistics extends Element{
 		this.OverviewGraph = new OverviewGraph();
 		this.YearlyGraphs = new Element();
 
-		let graphLegendPrimary = new Element(`Procento úspěšných studentů`);
-		graphLegendPrimary.DOM.className = `GraphLabel primary`;
-		let graphLegendSecondary = new Element(`Počet přihlášených studentů`);
-		graphLegendSecondary.DOM.className = `GraphLabel secondary`;
-		
 		this.Children.push(
 			new Header(
 				new Heading(HeadingLevel.Title,
@@ -39,8 +34,12 @@ export class CourseStatistics extends Element{
 				)
 			),
 			this.OverviewGraph,
-			graphLegendPrimary,
-			graphLegendSecondary,
+			new Element(`Procento úspěšných studentů`).Options(
+				{Class: `GraphLabel primary`}
+			),
+			new Element(`Počet přihlášených studentů`).Options(
+				{Class: `GraphLabel secondary`}
+			),
 			new Heading(HeadingLevel.Section, `Histogramy jednotlivých roků`),
 			this.YearlyGraphs
 		);

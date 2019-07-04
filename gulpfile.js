@@ -21,7 +21,7 @@ gulp.task("browserify-typescript", () => browserify({ debug: buildDebug })
 		noImplicitAny: true,
 		module: "commonjs",
 		moduleResolution: "node",
-		target: "es5",
+		target: "es6",
 		removeComments: true,
 		suppressImplicitAnyIndexErrors: true,
 		lib: ["es2015", "dom"]

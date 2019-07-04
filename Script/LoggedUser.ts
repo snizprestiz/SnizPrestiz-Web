@@ -1,8 +1,7 @@
 export class LoggedUser{
 	public static IsLogged: boolean;
 	public static Token: string;
-	public static Nickname: string;
-	public static FullName: string;
+	public static Login: string;
 	public static WisProxyUrl: string = `https://wisproxy.snizprestiz.eu`;
 
 	public static Logout(): void {
@@ -10,8 +9,7 @@ export class LoggedUser{
 		
 		this.IsLogged = false;
 		this.Token = ``;
-		this.Nickname = ``;
-		this.FullName = ``;
+		this.Login = ``;
 
 		// TODO Přesměrovat na výchozí stránku
 	}

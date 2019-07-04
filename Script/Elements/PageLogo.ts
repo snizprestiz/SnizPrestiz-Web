@@ -37,13 +37,13 @@ export class PageLogo extends Link{
 	}
 
 	private ShowWithoutAnimation(): void {
-		let lastIndex = localStorage.getItem(`LastAnimationIndex`);
-		if(lastIndex != null && Number(lastIndex) < PageLogo.AvailableTexts.length)
-			this.Root.textContent = PageLogo.AvailableTexts[Number(lastIndex)];
-		else
-			this.Root.textContent = PageLogo.AvailableTexts[Math.floor(Math.random() * PageLogo.AvailableTexts.length)];
+		let text: string = localStorage.getItem(`LastAnimationIndex`);
+		if (text != null) text = PageLogo.AvailableTexts[Number(text)];
+		if(text == null)
+			text = PageLogo.AvailableTexts[Math.floor(Math.random() * PageLogo.AvailableTexts.length)];
 		
-		this.Root.classList.add(`finished`, `skip-animation`);
+		this.Text = text;
+		this.Class.add(`finished`, `skip-animation`);
 	}
 	
 	public AnimateLogo(): void {
@@ -57,11 +57,11 @@ export class PageLogo extends Link{
 
 	private AdvanceChars(): void {
 		this.CharsDisplayed++;
-		this.Root.textContent = this.FinalText.substring(0, this.CharsDisplayed);
+		this.Text = this.FinalText.substring(0, this.CharsDisplayed);
 		
 		if (this.CharsDisplayed < this.FinalText.length)
 			setTimeout(this.AdvanceChars.bind(this), 50 + Math.random() * 50);
 		else
-			this.Root.classList.add(`finished`);
+			this.Class.add(`finished`);
 	}
 }

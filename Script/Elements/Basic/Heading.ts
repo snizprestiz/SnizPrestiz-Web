@@ -8,7 +8,7 @@ export class Heading extends Element{
 	}
 
 	public constructor(level: HeadingLevel, ...children: Child[]) {
-		super();
+		super(...children);
 		this.Root.remove();
 		this.Root = document.createElement(level);
 		this.Children.push(...children);

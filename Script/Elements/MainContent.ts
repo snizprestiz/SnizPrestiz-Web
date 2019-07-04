@@ -8,7 +8,7 @@ export class MainContent extends Element{
 
 	public constructor() {
 		super();
-		Observer.RegisterPageChange((curr): void => this.ChangePage(curr));
+		Observer.RegisterPageChanged((curr): void => this.ChangePage(curr));
 	}
 
 	public ChangePage(curr: Page): void{

@@ -4,28 +4,32 @@ import { Header } from "../Elements/Basic/Header";
 import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
 import { Element } from "../Elements/Basic/Element";
-import { Link } from "../Elements/Basic/Link";
-import { LinkTarget } from "../Elements/Basic/LinkTarget";
-import { Abbreviation } from "../Elements/Abbreviation";
+import { Navigation } from "../Navigation";
+import { CourseListItem } from "../Elements/CourseListItem";
 
 export class AllCourses extends Page{
 	public get Name(): string { return `AllCourses`; }
 
+	private MyCoursesContainer: Element;
+	private AllCoursesContainer: Element;
+
 	public constructor() {
 		super();
+		Navigation.PageTitle = `Seznam předmětů`;
+
+		this.MyCoursesContainer = new Element().Options({Class: `CoursesContainer MyCourses`});
+		this.AllCoursesContainer = new Element().Options({ Class: `CoursesContainer AllCourses` });
+		
+		this.AllCoursesContainer.Children.push(new CourseListItem(`IOS`, `Operační systémy`, `L`));
+		
 		this.RootElement = new WidthLimitedElement(
 			new Header(
-				new Heading(HeadingLevel.Title, `Všechny předměty`),
+				new Heading(HeadingLevel.Title, `Seznam předmětů`),
 			),
 			new Heading(HeadingLevel.Section, `Moje předměty`),
-			new Element(),
+			this.MyCoursesContainer,
 			new Heading(HeadingLevel.Section, `Všechny předměty`),
-			new Element(
-				new Link(`/course/ios`, LinkTarget.Default,
-					new Abbreviation(`IOS`),
-					`Operační systémy`
-				)
-			)
+			this.AllCoursesContainer
 		);
 	}
 }

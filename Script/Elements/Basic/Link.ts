@@ -2,6 +2,7 @@ import { LinkTarget } from "./LinkTarget";
 import { Element } from "./Element";
 import { Child } from "./Child";
 import { Navigation } from "../../Navigation";
+import { Observer } from "../../Observer";
 
 export class Link extends Element{
 	protected Root: HTMLAnchorElement;
@@ -16,19 +17,37 @@ export class Link extends Element{
 	}
 	
 	public get Target(): LinkTarget {
-		return LinkTarget[this.Root.target];
+		if (this.Root.target == `_self`)
+			return LinkTarget.Current;
+		else if (this.Root.target == `_blank`)
+			return LinkTarget.NewTab;
+		return LinkTarget.Default;
 	}
 
 	public set Target(target: LinkTarget) {
-		this.Root.target = target;
+		if (target == LinkTarget.Current)
+			this.Root.target = `_self`;
+		else if (target == LinkTarget.NewTab)
+			this.Root.target = `_blank`;
+		else
+			this.Root.target = ``;
 	}
 	
-	public constructor(url: string, ...children: Child[])
-	public constructor(url: string, target: LinkTarget = LinkTarget.Default, ...children: Child[]) {
-		super(...children);
-		this.Root.target = target;
+	public constructor(url: string, ...children: Child[]);
+	public constructor(url: string, target: LinkTarget, ...children: Child[]);
+	public constructor(url: string, target?: LinkTarget | Child, ...children: Child[]) {
+		super();
+
 		this.Root.onclick = (e): void => this.NavigateEvent(e);
 		if (url) this.URL = url;
+
+		if (typeof target == `number`) {
+			this.Target = target;
+		} else if (target != null) {
+			this.Children.push(target);
+		}
+
+		this.Children.push(...children);
 	}
 		
 	private NavigateEvent(e: MouseEvent): void {
@@ -36,6 +55,6 @@ export class Link extends Element{
 			return;
 		
 		e.preventDefault();
-		Navigation.Navigate(this.Root.pathname);
+		Observer.RequestPage(this.Root.pathname);
 	}
 }

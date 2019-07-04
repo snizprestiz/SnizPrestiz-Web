@@ -7,6 +7,7 @@ import { Abbreviation } from "../Elements/Abbreviation";
 import { Paragraph } from "../Elements/Basic/Paragraph";
 import { Link } from "../Elements/Basic/Link";
 import { LinkTarget } from "../Elements/Basic/LinkTarget";
+import { Navigation } from "../Navigation";
 
 export class Course extends Page{
 	public get Name(): string { return `Course`; }
@@ -15,7 +16,9 @@ export class Course extends Page{
 
 	public constructor(abbr: string) {
 		super();
+		
 		this.Abbr = abbr.toUpperCase();
+		Navigation.PageTitle = this.Abbr;
 
 		this.RootElement = new WidthLimitedElement(
 			new Header(
@@ -25,7 +28,7 @@ export class Course extends Page{
 				)
 			),
 			new Paragraph(`Hello world!`),
-			new Link(`/all-courses`, LinkTarget.Default, `Zpět na všechny předměty`)
+			new Link(`/all-courses`, `Zpět na všechny předměty`)
 		);
 	}
 }

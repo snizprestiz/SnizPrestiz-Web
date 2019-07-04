@@ -1,4 +1,5 @@
 import { Child } from "./Child";
+import { ElementOptions } from "./ElementOptions";
 
 export class Element{
 	protected Root: HTMLElement;
@@ -27,6 +28,8 @@ export class Element{
 		this.Children.splice(0, this.Children.length);
 		this.Children.push(text);
 	}
+
+	public get Class(): DOMTokenList { return this.Root.classList; }
 	
 	public constructor(...children: Child[]) {
 		this.Root = document.createElement(this.TagName);
@@ -62,5 +65,13 @@ export class Element{
 		});
 
 		this.Children.push(...children);
+	}
+
+	public Options(options: ElementOptions): this {
+		if (options.Class) this.Class.add(...options.Class.split(` `));
+		if (options.ID) this.ID = options.ID;
+		if (options.Tooltip) this.Tooltip = options.Tooltip;
+
+		return this;
 	}
 }

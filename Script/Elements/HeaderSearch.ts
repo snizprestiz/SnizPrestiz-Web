@@ -7,19 +7,20 @@ export class HeaderSearch extends Form{
 	public get ClassName(): string { return `SearchInput`; }
 
 	private Input: SearchInput;
-	private Submit: SubmitButton;
 
 	public constructor() {
 		super();
-		
-		this.Submit = new SubmitButton(`\uf002`);
-		this.Submit.Tooltip = `Vyhledat`;
-		
+
 		this.Input = new SearchInput(`query`);
 		this.Input.Placeholder = `Hledat...`;
 		this.Input.DOM.onkeyup = (): void => this.Search(this.Input.Value);
 
-		this.Children.push(this.Input, this.Submit);
+		this.Children.push(
+			this.Input,
+			new SubmitButton(`\uf002`).Options(
+				{ Tooltip: `Vyhledat` }
+			)
+		);
 	}
 
 	protected SubmitEvent(data: FormData): void {
