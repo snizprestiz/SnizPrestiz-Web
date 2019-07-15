@@ -1,12 +1,19 @@
 import { DpiAwareCanvas } from "../Elements/DpiAwareCanvas";
 import { GraphData, DistributionLabels } from "./GraphData";
 
+/**
+ * Histogram úspěšnosti předmětu
+ */
 export class Histogram extends DpiAwareCanvas{
 	private PaddingLeft = 50;
 	private PaddingBottom = 20;
 
 	private MaxPoints: number = 0;
 	private _Data: GraphData;
+
+	/**
+	 * Data histogramu
+	 */
 	public get Data(): GraphData { return this._Data; }
 	public set Data(value: GraphData) {
 		this._Data = value;
@@ -17,7 +24,7 @@ export class Histogram extends DpiAwareCanvas{
 
 		// Maximum je 8/7 velikosti největšího sloupce aby se tam vešla i legenda
 		this.MaxPoints = Math.ceil(this.MaxPoints * (8 / 7) / 10) * 10;
-		this.ResizeEvent();
+		this.OnResize();
 	}
 
 	public constructor(data?: GraphData) {
@@ -27,8 +34,8 @@ export class Histogram extends DpiAwareCanvas{
 		if (data) this.Data = data;
 	}
 
-	public ResizeEvent(): void {
-		super.ResizeEvent(false);
+	public OnResize(): void {
+		super.OnResize(false);
 		this.Context.translate(0.5, 0.5);
 		this.Draw();
 	}

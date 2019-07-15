@@ -3,28 +3,27 @@ import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
 import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
-import { Abbreviation } from "../Elements/Abbreviation";
+import { CourseCode } from "../Elements/CourseCode";
 import { Paragraph } from "../Elements/Basic/Paragraph";
 import { Link } from "../Elements/Basic/Link";
-import { LinkTarget } from "../Elements/Basic/LinkTarget";
 import { Navigation } from "../Navigation";
 
 export class Course extends Page{
 	public get Name(): string { return `Course`; }
 
-	public Abbr: string;
+	public Code: string;
 
-	public constructor(abbr: string) {
+	public constructor(code: string) {
 		super();
 
-		this.Abbr = abbr.toUpperCase();
-		Navigation.PageTitle = this.Abbr;
+		this.Code = code.toUpperCase();
+		Navigation.PageTitle = this.Code;
 
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(
 					new Heading(HeadingLevel.Title,
-						new Abbreviation(this.Abbr),
+						new CourseCode(this.Code),
 						`Název předmětu`
 					)
 				),

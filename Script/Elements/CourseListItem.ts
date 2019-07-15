@@ -1,25 +1,34 @@
 import { Element } from "./Basic/Element";
-import { Abbreviation } from "./Abbreviation";
+import { CourseCode } from "./CourseCode";
 import { Link } from "./Basic/Link";
 import { Icon } from "./Basic/Icon";
 
+/**
+ * Položka seznamu předmětů
+ */
 export class CourseListItem extends Link{
 	public get ClassName(): string { return `CourseListItem`; }
 
-	private AbbrElement: Abbreviation;
-	private SemesterElement: Abbreviation;
+	private CodeElement: CourseCode;
+	private SemesterElement: Element;
 	private NameElement: Element;
-	private ThreadsElement: Element;
+	private PostsElement: Element;
 	private FavouriteElement: Icon;
 
-	public get Abbr(): string {
-		return this.AbbrElement.Text;
+	/**
+	 * Zkratka předmětu
+	 */
+	public get Code(): string {
+		return this.CodeElement.Text;
 	}
 
-	public set Abbr(v: string) {
-		this.AbbrElement.Text = v;
+	public set Code(v: string) {
+		this.CodeElement.Text = v;
 	}
 
+	/**
+	 * Celý název předmětu
+	 */
 	public get Name(): string{
 		return this.NameElement.Text;
 	}
@@ -28,16 +37,22 @@ export class CourseListItem extends Link{
 		this.NameElement.Text = v;
 	}
 
-	public get Threads(): number{
-		return Number(this.ThreadsElement.Text);
+	/**
+	 * Počet příspěvků
+	 */
+	public get Posts(): number{
+		return Number(this.PostsElement.Text);
 	}
 
-	public set Threads(v: number) {
+	public set Posts(v: number) {
 		if (v == 0) this.Class.add(`empty`);
 		else this.Class.remove(`empty`);
-		this.ThreadsElement.Text = v.toString();
+		this.PostsElement.Text = v.toString();
 	}
 
+	/**
+	 * Je předmět mezi oblíbenými
+	 */
 	public get Favourite(): boolean {
 		return this.Class.contains(`favourite`);
 	}
@@ -49,6 +64,9 @@ export class CourseListItem extends Link{
 		else this.Class.remove(`favourite`);
 	}
 
+	/**
+	 * Do kterého semestru předmět patří
+	 */
 	public get Semester(): string {
 		return this.SemesterElement.Text;
 	}
@@ -58,27 +76,34 @@ export class CourseListItem extends Link{
 		this.SemesterElement.Text = v;
 	}
 
-	public constructor(abbr: string, name: string, semester: string, threads: number = 0, favourite: boolean = false) {
-		super(`/course/${abbr}`);
+	/**
+	 * @param code Zkratka předmětu
+	 * @param name Celý název předmětu
+	 * @param semester Do kterého semestru předmět patří
+	 * @param posts Počet příspěvků
+	 * @param favourite Je předmět mezi oblíbenými
+	 */
+	public constructor(code: string, name: string, semester: string, posts: number = 0, favourite: boolean = false) {
+		super(`/course/${code}`);
 
-		this.AbbrElement = new Abbreviation();
+		this.CodeElement = new CourseCode();
 		this.NameElement = new Element().Options({Class: `Name`});
 		this.SemesterElement = new Element().Options({ Class: `Semester` });
-		this.ThreadsElement = new Element().Options({ Class: `Threads` });
+		this.PostsElement = new Element().Options({ Class: `Threads` });
 		this.FavouriteElement = new Icon(`star`);
 
 		this.Children.push(
-			this.AbbrElement,
+			this.CodeElement,
 			this.NameElement,
 			this.SemesterElement,
-			this.ThreadsElement,
+			this.PostsElement,
 			this.FavouriteElement
 		);
 
-		this.Abbr = abbr;
+		this.Code = code;
 		this.Name = name;
 		this.Semester = semester;
 		this.Favourite = favourite;
-		this.Threads = threads;
+		this.Posts = posts;
 	}
 }

@@ -1,13 +1,22 @@
 import { LinkTarget } from "./LinkTarget";
 import { Element } from "./Element";
 import { Child } from "./Child";
-import { Navigation } from "../../Navigation";
 import { Observer } from "../../Observer";
 
+/**
+ * Odkaz
+ *
+ * ```html
+ * <a href="">...</a>
+ * ```
+ */
 export class Link extends Element{
 	protected Root: HTMLAnchorElement;
 	protected get TagName(): string { return `a`; }
 
+	/**
+	 * Odkazovaná adresa
+	 */
 	public get URL(): string {
 		return this.Root.href;
 	}
@@ -16,6 +25,9 @@ export class Link extends Element{
 		this.Root.href = url;
 	}
 
+	/**
+	 * Cíl odkazu (jak se má odkaz otevřít)
+	 */
 	public get Target(): LinkTarget {
 		if (this.Root.target == `_self`)
 			return LinkTarget.Current;
@@ -50,7 +62,11 @@ export class Link extends Element{
 		this.Children.push(...children);
 	}
 
+	/**
+	 * Metoda, která se vykoná při aktivaci odkazu
+	 */
 	private NavigateEvent(e: MouseEvent): void {
+		// Pokud vede odkaz mimo tuto stránku, pokračovat, jinak předat funkci Navigaci
 		if (this.Root.hostname != location.hostname && !!this.Root.hostname.length)
 			return;
 

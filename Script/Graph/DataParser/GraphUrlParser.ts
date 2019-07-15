@@ -1,6 +1,9 @@
 import { GraphImageParser } from "./GraphImageParser";
 import { GraphData } from "../GraphData";
 
+/**
+ * Analyzátor dat histogramu z URL adresy obrázku
+ */
 export class GraphUrlParser{
 	public static async GetGraphData(url: string): Promise<GraphData>{
 		return new Promise<GraphData>((resolve, reject): void => {

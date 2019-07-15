@@ -2,6 +2,9 @@ import { GraphDataByYear } from "./GraphDataByYear";
 import { String } from "typescript-string-operations";
 import { DpiAwareCanvasInteractive } from "../Elements/DpiAwareCanvasInteractive";
 
+/**
+ * Hlavní graf celkové úspěsnoti předmětu
+ */
 export class OverviewGraph extends DpiAwareCanvasInteractive{
 	private AnimationDuration = 1000;
 	private PlotFillColor = `rgba(0, 169, 224, {0})`;
@@ -20,12 +23,16 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 	private XAxisGradient: CanvasGradient;
 
 	private _Data: GraphDataByYear[];
+
+	/**
+	 * Data histogramu
+	 */
 	public get Data(): GraphDataByYear[] { return this._Data; }
 	public set Data(value: GraphDataByYear[]) {
 		this._Data = value.sort((a, b): number => a.Year - b.Year);
 		this.DoRenderLoop = true;
 		this.StartMilis = Date.now();
-		this.ResizeEvent();
+		this.OnResize();
 	}
 
 	public constructor() {
@@ -38,8 +45,8 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		return this.Height - this.BottomPadding - usableHeight * (value / max);
 	}
 
-	public ResizeEvent(): void{
-		super.ResizeEvent(false);
+	public OnResize(): void{
+		super.OnResize(false);
 
 		if (this.Data == null || this.Data.length == 0) return;
 
@@ -229,13 +236,13 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		ctx.fillStyle = this.PlotColorPrimary;
 		ctx.beginPath();
 		ctx.arc(xPos, passedY, 3, 0, Math.PI * 2);
-		this.DrawRoundRectangle(ctx, xPos - passedTextSize / 2, passedY - (passedY < enrolledY ? 29 : -7), passedTextSize, 22);
+		this.DrawRoundRectangle(xPos - passedTextSize / 2, passedY - (passedY < enrolledY ? 29 : -7), passedTextSize, 22);
 		ctx.fill();
 
 		ctx.fillStyle = this.PlotColorSecondary;
 		ctx.beginPath();
 		ctx.arc(xPos, enrolledY, 3, 0, Math.PI * 2);
-		this.DrawRoundRectangle(ctx, xPos - enrolledTextSize / 2, enrolledY - (passedY > enrolledY ? 29 : -7), enrolledTextSize, 22);
+		this.DrawRoundRectangle(xPos - enrolledTextSize / 2, enrolledY - (passedY > enrolledY ? 29 : -7), enrolledTextSize, 22);
 		ctx.fill();
 
 
@@ -271,8 +278,8 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		this.DrawLabel();
 	}
 
-	protected MouseHoverEvent(hovered: boolean): void {
-		super.MouseHoverEvent(hovered);
+	protected OnMouseHover(hovered: boolean): void {
+		super.OnMouseHover(hovered);
 		this.DoRenderLoop = true;
 	}
 }

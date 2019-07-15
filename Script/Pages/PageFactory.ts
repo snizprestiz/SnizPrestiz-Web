@@ -18,6 +18,10 @@ export class PageFactory{
 	private static PatternRegister: RegExp = /^\/register$/i;
 	private static PatternAccount: RegExp = /^\/account$/i;
 
+	/**
+	 * Vrátí objekt stránky podle cesty
+	 * @param path Cesta ke stránce, např. /login (bez koncového lomítka)
+	 */
 	public static GetByPath(path: string): Page{
 		let match: RegExpMatchArray;
 

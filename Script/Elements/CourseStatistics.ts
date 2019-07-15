@@ -6,22 +6,31 @@ import { Histogram } from "../Graph/Histogram";
 import { Header } from "./Basic/Header";
 import { Heading } from "./Basic/Heading";
 import { HeadingLevel } from "./Basic/HeadingLevel";
-import { Abbreviation } from "./Abbreviation";
+import { CourseCode } from "./CourseCode";
 
+/**
+ * Statistika úspěšnosti konkrétního předmětu
+ * TODO Předělat do stránky
+ * TODO Je to prototyp, potom změnit
+ */
 export class CourseStatistics extends Element{
 	public get ClassName(): string { return `CourseStatistics`; }
 
 	private OverviewGraph: OverviewGraph;
 	private YearlyGraphs: Element;
 
-	private CourseAbbr: string;
+	private CourseCode: string;
 	private CourseName: string;
 	private GraphData: GraphDataByYear[] = [];
 
-	public constructor(courseAbbr: string, courseName: string) {
+	/**
+	 * @param courseCode Zkratka předmětu
+	 * @param courseName Celý název předmětu
+	 */
+	public constructor(courseCode: string, courseName: string) {
 		super();
 
-		this.CourseAbbr = courseAbbr;
+		this.CourseCode = courseCode;
 		this.CourseName = courseName;
 		this.OverviewGraph = new OverviewGraph();
 		this.YearlyGraphs = new Element();
@@ -29,7 +38,7 @@ export class CourseStatistics extends Element{
 		this.Children.push(
 			new Header(
 				new Heading(HeadingLevel.Title,
-					new Abbreviation(this.CourseAbbr),
+					new CourseCode(this.CourseCode),
 					this.CourseName
 				)
 			),
@@ -60,7 +69,7 @@ export class CourseStatistics extends Element{
 			return;
 		}
 
-		GraphParser.FromUrl(`/${this.CourseAbbr}${year}.png`).then((data): void => {
+		GraphParser.FromUrl(`/${this.CourseCode}${year}.png`).then((data): void => {
 			let dataByYear = new GraphDataByYear(year, data);
 			this.GraphData.push(dataByYear);
 			this.AddHistogram(dataByYear);

@@ -3,6 +3,9 @@ import { LinkTarget } from "./Basic/LinkTarget";
 import { Footer } from "./Basic/Footer";
 import { Element } from "./Basic/Element";
 
+/**
+ * Patička stránky
+ */
 export class PageFooter extends Footer{
 	public get ClassName(): string { return `PageFooter`; }
 	public constructor() {

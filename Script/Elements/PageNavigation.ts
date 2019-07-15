@@ -8,17 +8,23 @@ import { Navigation } from "../Navigation";
 import { Register } from "../Pages/Register";
 import { Login } from "../Pages/Login";
 
+/**
+ * Hlavní navigace webu
+ */
 export class PageNavigation extends NavigationElement{
 	public get ClassName(): string { return `PageNavigation`; }
 
 	public constructor() {
 		super();
-		this.LoginChanged();
-		Observer.RegisterLoginChange((): void => this.LoginChanged());
-		Observer.RegisterPageChanged((): void => this.LoginChanged());
+		this.OnLoginChanged();
+		Observer.RegisterLoginChange((): void => this.OnLoginChanged());
+		Observer.RegisterPageChanged((): void => this.OnLoginChanged());
 	}
 
-	private LoginChanged(): void {
+	/**
+	 * Metoda, která se zavolá při změně příhlášení
+	 */
+	private OnLoginChanged(): void {
 		this.Children.splice(0, this.Children.length);
 
 		this.Children.push(

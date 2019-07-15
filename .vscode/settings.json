@@ -1,8 +1,9 @@
 {
 	"files.exclude": {
 		"node_modules": true,
+		"Build": true,
 		"package-lock.json": true,
-		"Build": true
+		".gitignore": true
 	},
 	"eslint.run": "onType",
 	"eslint.workingDirectories": ["Script"],

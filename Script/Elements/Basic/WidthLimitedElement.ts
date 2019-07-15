@@ -2,6 +2,17 @@ import { String } from "typescript-string-operations";
 import { Element } from "./Element";
 import { Child } from "./Child";
 
+/**
+ * Základní prvek limitovaný šířkou a obalen dalším prvkem.
+ *
+ * ```html
+ * <section class="WidthLimitedWrapper">
+ * 	<div>
+ * 		...
+ * 	</div>
+ * </section>
+ * ```
+ */
 export class WidthLimitedElement extends Element{
 	protected Wrapper: HTMLElement;
 

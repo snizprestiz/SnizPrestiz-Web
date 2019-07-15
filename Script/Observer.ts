@@ -1,5 +1,10 @@
 import { Page } from "./Pages/Page";
 
+/**
+ * Třída pro eventovou komunikaci mezi třídami
+ *
+ * Nejedná se úplně a návrhový vzor observer, ale základ je podobný
+ */
 export class Observer{
 	private static RequestPageCallback: ((path: string) => void)[] = [];
 

@@ -1,5 +1,10 @@
 import { GraphData } from "../GraphData";
 
+/**
+ * Analyzátor dat histogramu z obrázku
+ *
+ * TODO Dokončit dokumentaci
+ */
 export class GraphImageParser{
 	private static ParserContext: CanvasRenderingContext2D = null;
 

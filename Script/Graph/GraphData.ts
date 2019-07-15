@@ -26,14 +26,30 @@ export const DistributionLabels: string[] = [
 	`90+`
 ];
 
+/**
+ * Data histogramu
+ */
 export class GraphData{
+	/**
+	 * Počet studentů, co předmět úspěšně dokončili
+	 */
 	public Passed: number;
+
+	/**
+	 * Počet studentů, co předmět neudělali
+	 */
 	public Failed: number;
 
+	/**
+	 * Počet studentů zapsaných na předmět
+	 */
 	public get Enrolled(): number {
 		return this.Passed + this.Failed;
 	}
 
+	/**
+	 * Distribuce bodů, jako index je použitý `DistributionIndex`
+	 */
 	public PointsDistribution: number[];
 
 	public constructor() {
