@@ -4,7 +4,7 @@ import { Child } from "./Child";
 
 export class WidthLimitedElement extends Element{
 	protected Wrapper: HTMLElement;
-	
+
 	public get DOM(): HTMLElement {
 		return this.Wrapper;
 	}
@@ -14,7 +14,7 @@ export class WidthLimitedElement extends Element{
 		this.Wrapper = document.createElement(`section`);
 		this.Wrapper.append(this.Root);
 		this.Wrapper.className = `WidthLimitedWrapper`;
-		
+
 		if (!String.IsNullOrWhiteSpace(this.ClassName))
 			this.Wrapper.classList.add(`${this.ClassName}-wrapper`);
 	}

@@ -13,7 +13,7 @@ export class Unknown extends Page{
 	public constructor() {
 		super();
 		Navigation.PageTitle = `Stránka nenalezena`;
-		
+
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(

@@ -19,9 +19,9 @@ export class AllCourses extends Page{
 
 		this.MyCoursesContainer = new Element().Options({Class: `CoursesContainer MyCourses`});
 		this.AllCoursesContainer = new Element().Options({ Class: `CoursesContainer AllCourses` });
-		
+
 		this.AllCoursesContainer.Children.push(new CourseListItem(`IOS`, `Operační systémy`, `L`));
-		
+
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(

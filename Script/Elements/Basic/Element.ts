@@ -12,7 +12,7 @@ export class Element{
 	public get DOM(): HTMLElement {
 		return this.Root;
 	}
-	
+
 	public get ID(): string { return this.Root.id; }
 	public set ID(id: string) {
 		this.Root.id = id;
@@ -30,26 +30,26 @@ export class Element{
 	}
 
 	public get Class(): DOMTokenList { return this.Root.classList; }
-	
+
 	public constructor(...children: Child[]) {
 		this.Root = document.createElement(this.TagName);
 		this.Root.className = this.ClassName;
-		
+
 		this.Children = new Proxy(this._Children, {
 			deleteProperty: (target, property): boolean => {
 				let index = Number(property);
-				
+
 				if (index != NaN && this.Root.children.length > index)
 					this.Root.removeChild(this.Root.childNodes[index]);
-				
+
 				return true;
 			},
 			set: (target, property, value): boolean => {
 				target[property] = value;
-				
+
 				let index = Number(property);
 				if (index == NaN) return true;
-				
+
 				let node: Node;
 				if (typeof value == `string`) node = document.createTextNode(value);
 				else if (value instanceof Element) node = value.DOM;

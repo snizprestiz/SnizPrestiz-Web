@@ -10,7 +10,7 @@ import { Abbreviation } from "./Abbreviation";
 
 export class CourseStatistics extends Element{
 	public get ClassName(): string { return `CourseStatistics`; }
-	
+
 	private OverviewGraph: OverviewGraph;
 	private YearlyGraphs: Element;
 

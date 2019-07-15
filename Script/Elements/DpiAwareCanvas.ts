@@ -3,13 +3,13 @@ import { Element } from "./Basic/Element";
 export class DpiAwareCanvas extends Element{
 	public get TagName(): string { return `canvas`; }
 	protected Root: HTMLCanvasElement;
-	
+
 	private _DoRenderLoop: boolean;
 	public set DoRenderLoop(value: boolean) {
 		this._DoRenderLoop = value;
 		if (value) this.RenderLoop();
 	}
-	
+
 	private _Context: CanvasRenderingContext2D;
 	public get Context(): CanvasRenderingContext2D { return this._Context; }
 	public get Width(): number { return this.Root.width / devicePixelRatio; };
@@ -38,7 +38,7 @@ export class DpiAwareCanvas extends Element{
 
 	protected RenderLoop(): void{
 		if (!this._DoRenderLoop) return;
-		
+
 		this.Draw();
 		requestAnimationFrame((): void => this.RenderLoop());
 	}

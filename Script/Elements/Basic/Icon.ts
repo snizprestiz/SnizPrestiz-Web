@@ -10,21 +10,21 @@ export class Icon extends Element{
 		this._Name = name;
 		this.SetClassName();
 	}
-	
+
 	private _Type: IconType;
 	public get Type(): IconType { return this._Type; }
 	public set Type(type: IconType) {
 		this._Type = type;
 		this.SetClassName();
 	}
-	
+
 	public constructor(name: string, type: IconType = IconType.Regular) {
 		super();
 		this._Name = name;
 		this._Type = type;
 		this.SetClassName();
 	}
-	
+
 	private SetClassName(): void {
 		this.Root.className = `${this.Type} fa-${this.Name}`;
 	}

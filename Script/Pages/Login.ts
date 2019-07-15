@@ -12,7 +12,7 @@ export class Login extends Page{
 	public constructor() {
 		super();
 		Navigation.PageTitle = `Přihlášení`;
-		
+
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(

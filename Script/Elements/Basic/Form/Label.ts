@@ -20,7 +20,7 @@ export class Label extends Element{
 			let i = this.Children.indexOf(this._LinkedInput);
 			if (i >= 0) this.Children.splice(i, 1);
 		} else this.Root.htmlFor = String.Empty;
-		
+
 		if (v instanceof GenericInput)
 			this.Children.push(v);
 		else this.Root.htmlFor = v;

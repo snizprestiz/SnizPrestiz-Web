@@ -12,7 +12,7 @@ export class Register extends Page{
 	public constructor() {
 		super();
 		Navigation.PageTitle = `Vytvořit nový účet`;
-		
+
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(

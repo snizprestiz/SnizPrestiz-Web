@@ -2,14 +2,19 @@
 	"files.exclude": {
 		"node_modules": true,
 		"package-lock.json": true,
-		"Build": true,
-		"Build_TS": true
+		"Build": true
 	},
 	"eslint.run": "onType",
-	"eslint.workingDirectories": ["src"],
+	"eslint.workingDirectories": ["Script"],
 	"eslint.validate": [
 		"typescript",
 		"typescriptreact"
 	],
-	"eslint.enable": true
+	"eslint.enable": true,
+	"files.eol": "\n",
+	"files.encoding": "utf8",
+	"files.insertFinalNewline": true,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": true,
+	"files.trimTrailingWhitespace": true
 }

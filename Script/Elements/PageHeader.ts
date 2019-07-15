@@ -25,7 +25,7 @@ export class PageHeader extends WidthLimitedElement{
 		let index = this.Children.indexOf(this.Search);
 		if (index >= 0)
 			this.Children.splice(index, 1);
-		
+
 		if (LoggedUser.IsLogged) this.Children.push(this.Search);
 	}
 }

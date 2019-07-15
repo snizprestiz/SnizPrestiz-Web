@@ -27,7 +27,7 @@ export class HeaderSearch extends Form{
 		this.Input.Value = String.Empty;
 		this.Search(data.get(`query`).toString());
 	}
-	
+
 	private Search(query: string): void{
 		if (query == String.Empty) return;
 

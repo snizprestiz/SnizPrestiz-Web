@@ -20,7 +20,7 @@ export class PageNavigation extends NavigationElement{
 
 	private LoginChanged(): void {
 		this.Children.splice(0, this.Children.length);
-		
+
 		this.Children.push(
 			new Link(`https://github.com/su-fit-vut/student-voice`, LinkTarget.NewTab,
 				new Icon(`comments`),
@@ -32,10 +32,10 @@ export class PageNavigation extends NavigationElement{
 			this.Children.push(new Link(`/account`, new Icon(`user`), LoggedUser.Login));
 			return;
 		}
-		
+
 		if (!(Navigation.CurrentPage instanceof Login))
 			this.Children.push(new Link(`/login`, new Icon(`sign-in-alt`), `Přihlásit se`));
-		
+
 		if (!(Navigation.CurrentPage instanceof Register))
 			this.Children.push(new Link(`/register`, new Icon(`user-plus`), `Vytvořit účet`));
 	}

@@ -26,11 +26,11 @@ export class PageFactory{
 		else if ((match = path.match(this.PatternCourse)) != null)
 			return new Course(match[1]);
 		/* else if ((match = path.match(this.PatternCourseStats)) != null)
-		
+
 		else if ((match = path.match(this.PatternThread)) != null)
-		
+
 		else if ((match = path.match(this.PatternNewThread)) != null)
-		
+
 		else if ((match = path.match(this.PatternSearch)) != null)
 		*/
 		else if ((match = path.match(this.PatternLogin)) != null)

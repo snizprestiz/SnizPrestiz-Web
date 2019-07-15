@@ -11,7 +11,7 @@ export class DpiAwareCanvasInteractive extends DpiAwareCanvas{
 
 		this.Root.onmouseenter = (): void => this.MouseHoverEvent(true);
 		this.Root.onmouseleave = (): void => this.MouseHoverEvent(false);
-		
+
 		this.Root.onmousemove = (e): void => this.MouseMoveEvent({
 			X: e.offsetX,
 			Y: e.offsetY

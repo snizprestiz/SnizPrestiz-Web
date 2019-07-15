@@ -3,7 +3,7 @@ import { String } from "typescript-string-operations";
 
 export class PageLogo extends Link{
 	public get ClassName(): string { return `PageLogo`; };
-	
+
 	public static AnimationInitialDelay = 800;
 	public static AvailableTexts = [
 		`prestiz--;`,
@@ -27,7 +27,7 @@ export class PageLogo extends Link{
 		super(`/`);
 		this.Tooltip = `Sniž prestiž`;
 	}
-	
+
 	public get DOM(): HTMLElement {
 		if (document.referrer == String.Empty ||
 			new URL(document.referrer).hostname != location.hostname)
@@ -41,11 +41,11 @@ export class PageLogo extends Link{
 		if (text != null) text = PageLogo.AvailableTexts[Number(text)];
 		if(text == null)
 			text = PageLogo.AvailableTexts[Math.floor(Math.random() * PageLogo.AvailableTexts.length)];
-		
+
 		this.Text = text;
 		this.Class.add(`finished`, `skip-animation`);
 	}
-	
+
 	public AnimateLogo(): void {
 		let randomIndex = Math.floor(Math.random() * PageLogo.AvailableTexts.length);
 		localStorage.setItem(`LastAnimationIndex`, randomIndex.toString());
@@ -58,7 +58,7 @@ export class PageLogo extends Link{
 	private AdvanceChars(): void {
 		this.CharsDisplayed++;
 		this.Text = this.FinalText.substring(0, this.CharsDisplayed);
-		
+
 		if (this.CharsDisplayed < this.FinalText.length)
 			setTimeout(this.AdvanceChars.bind(this), 50 + Math.random() * 50);
 		else

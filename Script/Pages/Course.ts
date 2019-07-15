@@ -16,7 +16,7 @@ export class Course extends Page{
 
 	public constructor(abbr: string) {
 		super();
-		
+
 		this.Abbr = abbr.toUpperCase();
 		Navigation.PageTitle = this.Abbr;
 

@@ -6,7 +6,7 @@ export class LoggedUser{
 
 	public static Logout(): void {
 		// TODO Kontaktovat server s žádostí o revoke tokenu
-		
+
 		this.IsLogged = false;
 		this.Token = ``;
 		this.Login = ``;

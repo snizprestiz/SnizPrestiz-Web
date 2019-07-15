@@ -14,7 +14,7 @@ export class Histogram extends DpiAwareCanvas{
 			...value.PointsDistribution,
 			value.PointsDistribution[0] + value.PointsDistribution[1]
 		);
-		
+
 		// Maximum je 8/7 velikosti největšího sloupce aby se tam vešla i legenda
 		this.MaxPoints = Math.ceil(this.MaxPoints * (8 / 7) / 10) * 10;
 		this.ResizeEvent();
@@ -38,7 +38,7 @@ export class Histogram extends DpiAwareCanvas{
 
 		if (this.Data == null)
 			return;
-		
+
 		let ctx = this.Context;
 		let heightUnit = (this.Height - this.PaddingBottom) / 10;
 		let barSize = heightUnit * 2 / 3;
@@ -78,14 +78,14 @@ export class Histogram extends DpiAwareCanvas{
 				ctx.textBaseline = `bottom`;
 				ctx.fillText(`Hranice úspešnosti`, this.Width - 5, yPos - 7);
 			}
-			
+
 			ctx.fillStyle = `rgba(0, 169, 224, 1)`;
 			ctx.fillRect(this.PaddingLeft + (i == 1 ? nanLen : 0), yPos - 1, len, barSize);
 			if (i == 1) {
 				ctx.fillStyle = `rgba(0, 117, 155, 1)`;
 				ctx.fillRect(this.PaddingLeft, yPos - 1, nanLen, barSize);
 			}
-			
+
 			ctx.textAlign = `left`;
 			ctx.textBaseline = `middle`;
 			ctx.fillStyle = `#000000`;

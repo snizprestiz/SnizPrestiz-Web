@@ -2,7 +2,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch in Microsoft Edge Dev",
+			"name": "Attach to Edge Chromium",
 			"type": "edge",
 			"request": "attach",
 			"port": 2015,

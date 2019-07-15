@@ -12,15 +12,15 @@ export class About extends Page{
 
 	public constructor() {
 		super();
-		
+
 		if (LoggedUser.IsLogged) {
 			this._LoadAgain = true;
 			history.replaceState(null, null, `/all-courses`);
 			return;
 		}
-		
+
 		Navigation.PageTitle = null;
-		
+
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(

@@ -29,11 +29,11 @@ export const DistributionLabels: string[] = [
 export class GraphData{
 	public Passed: number;
 	public Failed: number;
-	
+
 	public get Enrolled(): number {
 		return this.Passed + this.Failed;
 	}
-	
+
 	public PointsDistribution: number[];
 
 	public constructor() {

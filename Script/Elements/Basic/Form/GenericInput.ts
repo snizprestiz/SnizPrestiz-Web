@@ -4,7 +4,7 @@ export class GenericInput extends Element{
 	protected Root: HTMLInputElement;
 	protected get TagName(): string { return `input`; }
 	protected get Type(): string { return `text`; }
-	
+
 	public get Required(): boolean { return this.Root.required; }
 	public set Required(val: boolean) {
 		this.Root.required = val;

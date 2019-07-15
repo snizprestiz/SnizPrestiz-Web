@@ -13,15 +13,15 @@ export class GraphImageParser{
 	public static GetGraphData(image: HTMLImageElement): GraphData{
 		if (this.ParserContext == null) this.SetupParserCanvas();
 
-		if (image.width != 400 || image.height != 400) 
+		if (image.width != 400 || image.height != 400)
 			throw new Error(`Image has incorrect dimensions`);
-		
+
 		this.ParserContext.drawImage(image, 0, 0);
 		let imageData = this.ParserContext.getImageData(0, 0, 400, 400);
 
 		if (!this.ImageValidateTestPoints(imageData))
 			throw new Error(`Image validation failed`);
-		
+
 		let graphData = new GraphData();
 		graphData.Passed = this.ParseNumber(imageData, 120, 384);
 		graphData.Failed = this.ParseNumber(imageData, 218 + graphData.Passed.toString().length * 7, 384);
@@ -44,7 +44,7 @@ export class GraphImageParser{
 	private static ImageValidateTestPoints(imageData: ImageData): boolean {
 		for (const testPoint of this.ImageTestPoints) {
 			let index = testPoint.x + testPoint.y * imageData.width;
-			
+
 			if (imageData.data[index * 4] != testPoint.value[0] ||
 				imageData.data[index * 4 + 1] != testPoint.value[1] ||
 				imageData.data[index * 4 + 2] != testPoint.value[2])
@@ -57,17 +57,17 @@ export class GraphImageParser{
 	private static IsPixelDark(imageData: ImageData, x: number, y: number): boolean {
 		return imageData.data[(x + y * imageData.width) * 4] == 0;
 	}
-	
+
 	private static ParseGraph(imageData: ImageData, enrolled: number, parsedPoints: number[]): void {
 		let rawBarWidth: number[] = new Array(11);
-		
+
 		for (let i = 0; i < 10; i++) {
 			let width = 51;
 			for (; this.IsPixelDark(imageData, width, 51 + 34 * i); width++);
 			width -= 51;
-			
-			// U prvního řádku je kromě běžné hodnoty 0-9 navíc speciální 
-			// hodnota "nebyl hodnocen" znázorněna oranžově, je proto potřeba 
+
+			// U prvního řádku je kromě běžné hodnoty 0-9 navíc speciální
+			// hodnota "nebyl hodnocen" znázorněna oranžově, je proto potřeba
 			// tento první řádek speciálně analyzovat
 			if (i == 0) {
 				// Pokud má řádek šířku 1 (je vidět jen černý obrys konce) přepokládáme
@@ -78,26 +78,26 @@ export class GraphImageParser{
 					rawBarWidth[1] = 0;
 					continue;
 				}
-				
+
 				let nanWidth = 51 - 2 + width;
 				for (; Math.abs(imageData.data[(nanWidth + 52 * imageData.width) * 4] - 170) < 30; nanWidth--);
-				
+
 				if (imageData.data[(nanWidth + 52 * imageData.width) * 4] != 0)
 					nanWidth++;
-				
+
 				nanWidth -= 50;
 				width -= nanWidth;
 				rawBarWidth[0] = nanWidth;
 			}
-			
+
 			rawBarWidth[i + 1] = width;
 		}
-		
+
 		let widthSum = 0;
 		rawBarWidth.forEach((width): number => widthSum += width);
-		
+
 		let points: { pos: number; accuracy: number; count: number}[] = new Array(rawBarWidth.length);
-		
+
 		for (let i = 0; i < rawBarWidth.length; i++) {
 			let countRaw = rawBarWidth[i] / widthSum * enrolled;
 			points[i] = {
@@ -106,7 +106,7 @@ export class GraphImageParser{
 				count: Math.round(countRaw)
 			};
 		}
-		
+
 		let pointsSum = 0;
 		points.sort((a, b): number => a.accuracy - b.accuracy);
 		for (let i = 0; i < points.length; i++){
@@ -116,7 +116,7 @@ export class GraphImageParser{
 
 		if (pointsSum > enrolled) parsedPoints[points[10].pos] = enrolled - (pointsSum - points[10].count);
 	}
-	 
+
 	private static ParseNumber(imageData: ImageData, startX: number, startY: number): number {
 		let parsedNumber: number = null;
 
@@ -137,7 +137,7 @@ export class GraphImageParser{
 	private static ParseDigit(imageData: ImageData, startX: number, startY: number): number {
 		if (startX + 6 > imageData.width || startY + 8 > imageData.height)
 			throw new Error(`Cannot parse digit - out of bounds`);
-		
+
 		if (this.IsPixelDark(imageData, startX + 2, startY + 1)) return 1;
 		if (this.IsPixelDark(imageData, startX + 0, startY + 7)) return 2;
 		if (this.IsPixelDark(imageData, startX + 5, startY + 7)) return 4;
@@ -148,7 +148,7 @@ export class GraphImageParser{
 		if (this.IsPixelDark(imageData, startX + 0, startY + 3)) return 6;
 		if (this.IsPixelDark(imageData, startX + 1, startY + 4)) return 8;
 		if (this.IsPixelDark(imageData, startX + 2, startY + 0)) return 3;
-		
+
 		return null;
 	}
 }

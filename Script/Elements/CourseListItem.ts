@@ -11,7 +11,7 @@ export class CourseListItem extends Link{
 	private NameElement: Element;
 	private ThreadsElement: Element;
 	private FavouriteElement: Icon;
-	
+
 	public get Abbr(): string {
 		return this.AbbrElement.Text;
 	}
@@ -37,11 +37,11 @@ export class CourseListItem extends Link{
 		else this.Class.remove(`empty`);
 		this.ThreadsElement.Text = v.toString();
 	}
-	
+
 	public get Favourite(): boolean {
 		return this.Class.contains(`favourite`);
 	}
-	
+
 	public set Favourite(v: boolean) {
 		// TODO Fav API
 
@@ -52,7 +52,7 @@ export class CourseListItem extends Link{
 	public get Semester(): string {
 		return this.SemesterElement.Text;
 	}
-	
+
 	public set Semester(v: string) {
 		// TODO předělat na enum winter/summer
 		this.SemesterElement.Text = v;

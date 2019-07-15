@@ -40,9 +40,9 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 	public ResizeEvent(): void{
 		super.ResizeEvent(false);
-		
+
 		if (this.Data == null || this.Data.length == 0) return;
-		
+
 		let plotGradient = this.Context.createLinearGradient(0, 0, 0, this.Height);
 		plotGradient.addColorStop(0, String.Format(this.PlotFillColor, 0.2));
 		plotGradient.addColorStop(0.8, String.Format(this.PlotFillColor, 0));
@@ -52,7 +52,7 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		xAxisGradient.addColorStop(0.1, `rgba(0, 0, 0, 0)`);
 		xAxisGradient.addColorStop(1, `rgba(0, 0, 0, 0.05)`);
 		this.XAxisGradient = xAxisGradient;
-		
+
 		this.EnrolledMax = Math.max(...this.Data.map((data): number => data.Enrolled));
 		if (this.EnrolledMax > 100) this.EnrolledMax = Math.ceil(this.EnrolledMax / 100) * 100;
 		else this.EnrolledMax = Math.ceil(this.EnrolledMax / 10) * 10;
@@ -63,11 +63,11 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		plotPassedPath.lineTo(this.SidePadding, this.GetGraphY(this.Data[0].Passed, this.Data[0].Enrolled));
 		plotEnrolledPath.moveTo(-1, this.GetGraphY(this.Data[0].Enrolled, this.EnrolledMax));
 		plotEnrolledPath.lineTo(this.SidePadding, this.GetGraphY(this.Data[0].Enrolled, this.EnrolledMax));
-		
+
 		if (this.Data.length > 1) {
 			let usableWidth = this.Width - this.SidePadding * 2;
 			let widthUnit = usableWidth / (this.Data.length - 1);
-			
+
 			for (let i = 1; i < this.Data.length; i++) {
 				plotPassedPath.bezierCurveTo(
 					this.SidePadding + i * widthUnit - widthUnit / 2,
@@ -88,7 +88,7 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 				);
 			}
 		}
-		
+
 		let lastData = this.Data[this.Data.length - 1];
 
 		plotEnrolledPath.lineTo(this.Width + 1, this.GetGraphY(lastData.Enrolled, this.EnrolledMax));
@@ -102,12 +102,12 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 		this.Draw();
 	}
-	
+
 	private GetScoolYear(year: number): string {
 		if (year < 1000) return null;
 		return `${year.toString().substring(2)}/${(year + 1).toString().substring(2)}`;
 	}
-	
+
 	private DrawXAxis(progress: number = 1): void{
 		let ctx = this.Context;
 		let usableWidth = this.Width - this.SidePadding * 2;
@@ -125,7 +125,7 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 			let opacity = (animPosX - x + this.SidePadding * 4) / (this.SidePadding * 5);
 			if (opacity > 1) opacity = 1;
 			else if (opacity < 0) opacity = 0;
-			
+
 			ctx.globalAlpha = opacity;
 			ctx.beginPath();
 			ctx.moveTo(x, this.TopPadding);
@@ -142,17 +142,17 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 	private DrawYAxis(): void{
 		let ctx = this.Context;
-		
+
 		if (this.MouseHoverTime == undefined) return;
 
 		let progress = (Date.now() - this.MouseHoverTime) / this.Transition;
 		if (progress < 0) progress = 0;
 		if (progress > 1) progress = 1;
 		if (!this.MouseHover) progress = 1 - progress;
-		
+
 		ctx.lineWidth = 1;
 		ctx.strokeStyle = `rgba(0, 0, 0, 0.1)`;
-		
+
 		ctx.globalAlpha = progress;
 		ctx.beginPath();
 		ctx.moveTo(0, this.TopPadding);
@@ -166,13 +166,13 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 		ctx.textBaseline = `bottom`;
 		ctx.font = `12px 'Noto Sans'`;
-		
+
 		ctx.fillStyle = this.PlotColorPrimary;
 		ctx.textAlign = `left`;
 		ctx.fillText(`100%`, 5, this.TopPadding - 1);
 		ctx.fillText(`50%`, 5, this.TopPadding + (this.Height - this.TopPadding - this.BottomPadding) / 2 - 1);
 		ctx.fillText(`0%`, 5, this.Height - this.BottomPadding - 1);
-		
+
 		ctx.fillStyle = this.PlotColorSecondary;
 		ctx.textAlign = `right`;
 		ctx.fillText(this.EnrolledMax.toString(), this.Width - 5, this.TopPadding - 1);
@@ -189,7 +189,7 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		ctx.fillStyle = this.PlotFillGradient;
 		ctx.strokeStyle = this.PlotColorPrimary;
 		ctx.lineWidth = 1.5;
-		
+
 		ctx.save();
 		ctx.beginPath();
 		ctx.rect(0, 0, animPosX, this.Height);
@@ -205,14 +205,14 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 	private DrawLabel(): void{
 		if (!this.MouseHover) return;
-		
+
 		let ctx = this.Context;
 		let usableWidth = this.Width - this.SidePadding * 2;
 		let widthUnit = usableWidth / (this.Data.length - 1);
 
 		let index = Math.round((this.MousePos.X - this.SidePadding) / widthUnit);
 		if (index < 0 || index >= this.Data.length) return;
-		
+
 		ctx.font = `15px 'Noto Sans'`;
 		ctx.textAlign = `center`;
 
@@ -231,14 +231,14 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		ctx.arc(xPos, passedY, 3, 0, Math.PI * 2);
 		this.DrawRoundRectangle(ctx, xPos - passedTextSize / 2, passedY - (passedY < enrolledY ? 29 : -7), passedTextSize, 22);
 		ctx.fill();
-		
+
 		ctx.fillStyle = this.PlotColorSecondary;
 		ctx.beginPath();
 		ctx.arc(xPos, enrolledY, 3, 0, Math.PI * 2);
 		this.DrawRoundRectangle(ctx, xPos - enrolledTextSize / 2, enrolledY - (passedY > enrolledY ? 29 : -7), enrolledTextSize, 22);
 		ctx.fill();
 
-		
+
 		ctx.fillStyle = `white`;
 		ctx.textBaseline = passedY < enrolledY ? `bottom` : `top`;
 		ctx.fillText(passedText, xPos, passedY + 1 +10 * (passedY < enrolledY ? -1 : 1));
@@ -251,12 +251,12 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 
 		if (this.StartMilis < 0 || this.Data == null || this.PlotPassedPath == null)
 			return;
-	
+
 		let animTime = (Date.now() - this.StartMilis) / this.AnimationDuration;
-		
+
 		// Animace osy X je předsazená, aby začala na nule musí být časování záporné
 		animTime -= this.SidePadding * 3 / this.Width;
-		
+
 		if (animTime > 1) {
 			animTime = 1;
 			if(Date.now() - this.MouseHoverTime > this.Transition)
@@ -264,7 +264,7 @@ export class OverviewGraph extends DpiAwareCanvasInteractive{
 		}
 
 		let animProgress = animTime < 0 ? animTime : Math.sin(animTime * Math.PI / 2);
-		
+
 		this.DrawXAxis(animProgress);
 		this.DrawPlot(animProgress);
 		this.DrawYAxis();

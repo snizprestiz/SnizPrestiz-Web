@@ -14,6 +14,6 @@ export class Form extends Element{
 	}
 
 	protected SubmitEvent(data: FormData): void {
-		
+
 	}
 }

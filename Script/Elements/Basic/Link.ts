@@ -15,7 +15,7 @@ export class Link extends Element{
 	public set URL(url: string) {
 		this.Root.href = url;
 	}
-	
+
 	public get Target(): LinkTarget {
 		if (this.Root.target == `_self`)
 			return LinkTarget.Current;
@@ -32,7 +32,7 @@ export class Link extends Element{
 		else
 			this.Root.target = ``;
 	}
-	
+
 	public constructor(url: string, ...children: Child[]);
 	public constructor(url: string, target: LinkTarget, ...children: Child[]);
 	public constructor(url: string, target?: LinkTarget | Child, ...children: Child[]) {
@@ -49,11 +49,11 @@ export class Link extends Element{
 
 		this.Children.push(...children);
 	}
-		
+
 	private NavigateEvent(e: MouseEvent): void {
 		if (this.Root.hostname != location.hostname && !!this.Root.hostname.length)
 			return;
-		
+
 		e.preventDefault();
 		Observer.RequestPage(this.Root.pathname);
 	}

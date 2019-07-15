@@ -8,7 +8,7 @@ export class TextInput extends GenericInput {
 	public set Autocomplete(v: boolean) {
 		this.Root.autocomplete = v ? `on` : `off`;
 	}
-	
+
 	public get Placeholder(): string {
 		return this.Root.placeholder;
 	}
