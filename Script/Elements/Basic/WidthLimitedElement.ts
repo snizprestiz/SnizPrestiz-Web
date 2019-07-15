@@ -13,8 +13,9 @@ export class WidthLimitedElement extends Element{
 		super(...children);
 		this.Wrapper = document.createElement(`section`);
 		this.Wrapper.append(this.Root);
+		this.Wrapper.className = `WidthLimitedWrapper`;
 		
 		if (!String.IsNullOrWhiteSpace(this.ClassName))
-			this.Wrapper.className = `${this.ClassName}-wrapper`;
+			this.Wrapper.classList.add(`${this.ClassName}-wrapper`);
 	}
 }

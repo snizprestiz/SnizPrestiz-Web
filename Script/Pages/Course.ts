@@ -20,15 +20,17 @@ export class Course extends Page{
 		this.Abbr = abbr.toUpperCase();
 		Navigation.PageTitle = this.Abbr;
 
-		this.RootElement = new WidthLimitedElement(
-			new Header(
-				new Heading(HeadingLevel.Title,
-					new Abbreviation(this.Abbr),
-					`Název předmětu`
-				)
-			),
-			new Paragraph(`Hello world!`),
-			new Link(`/all-courses`, `Zpět na všechny předměty`)
+		this.Children.push(
+			new WidthLimitedElement(
+				new Header(
+					new Heading(HeadingLevel.Title,
+						new Abbreviation(this.Abbr),
+						`Název předmětu`
+					)
+				),
+				new Paragraph(`Hello world!`),
+				new Link(`/all-courses`, `Zpět na všechny předměty`)
+			)
 		);
 	}
 }

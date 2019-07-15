@@ -13,12 +13,14 @@ export class Register extends Page{
 		super();
 		Navigation.PageTitle = `Vytvořit nový účet`;
 		
-		this.RootElement = new WidthLimitedElement(
-			new Header(
-				new Heading(HeadingLevel.Title, `Vytvořit nový účet`)
-			),
-			`Máte účet? `,
-			new Link(`/login`, `Přihlasit se`)
+		this.Children.push(
+			new WidthLimitedElement(
+				new Header(
+					new Heading(HeadingLevel.Title, `Vytvořit nový účet`)
+				),
+				`Máte účet? `,
+				new Link(`/login`, `Přihlasit se`)
+			)
 		);
 	}
 }

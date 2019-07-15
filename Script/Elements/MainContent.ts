@@ -13,6 +13,6 @@ export class MainContent extends Element{
 
 	public ChangePage(curr: Page): void{
 		this.Children.splice(0, this.Children.length);
-		this.Children.push(curr.Main);
+		this.Children.push(curr);
 	}
 }

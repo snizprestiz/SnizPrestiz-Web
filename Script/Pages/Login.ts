@@ -13,11 +13,13 @@ export class Login extends Page{
 		super();
 		Navigation.PageTitle = `Přihlášení`;
 		
-		this.RootElement = new WidthLimitedElement(
-			new Header(
-				new Heading(HeadingLevel.Title, `Přihlášení`)
-			),
-			new Link(`/register`, `Vytvořit nový účet`)
+		this.Children.push(
+			new WidthLimitedElement(
+				new Header(
+					new Heading(HeadingLevel.Title, `Přihlášení`)
+				),
+				new Link(`/register`, `Vytvořit nový účet`)
+			)
 		);
 	}
 }

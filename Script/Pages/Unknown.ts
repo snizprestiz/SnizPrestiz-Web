@@ -14,12 +14,14 @@ export class Unknown extends Page{
 		super();
 		Navigation.PageTitle = `Stránka nenalezena`;
 		
-		this.RootElement = new WidthLimitedElement(
-			new Header(
-				new Heading(HeadingLevel.Title, `Stránka nenalezena`)
-			),
-			new Paragraph(`Požadovaná stránka "${location.pathname}" nebyla nalezena.`),
-			new Link(`/all-courses`, `Vrátit se na všechny předměty`)
+		this.Children.push(
+			new WidthLimitedElement(
+				new Header(
+					new Heading(HeadingLevel.Title, `Stránka nenalezena`)
+				),
+				new Paragraph(`Požadovaná stránka "${location.pathname}" nebyla nalezena.`),
+				new Link(`/all-courses`, `Vrátit se na všechny předměty`)
+			)
 		);
 	}
 }

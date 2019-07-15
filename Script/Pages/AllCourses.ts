@@ -22,14 +22,16 @@ export class AllCourses extends Page{
 		
 		this.AllCoursesContainer.Children.push(new CourseListItem(`IOS`, `Operační systémy`, `L`));
 		
-		this.RootElement = new WidthLimitedElement(
-			new Header(
-				new Heading(HeadingLevel.Title, `Seznam předmětů`),
-			),
-			new Heading(HeadingLevel.Section, `Moje předměty`),
-			this.MyCoursesContainer,
-			new Heading(HeadingLevel.Section, `Všechny předměty`),
-			this.AllCoursesContainer
+		this.Children.push(
+			new WidthLimitedElement(
+				new Header(
+					new Heading(HeadingLevel.Title, `Seznam předmětů`),
+				),
+				new Heading(HeadingLevel.Section, `Moje předměty`),
+				this.MyCoursesContainer,
+				new Heading(HeadingLevel.Section, `Všechny předměty`),
+				this.AllCoursesContainer
+			)
 		);
 	}
 }
