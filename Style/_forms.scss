@@ -16,38 +16,68 @@ label{
 	max-width: 400px;
 	margin: 8px 0;
 
+	input{
+		transition: all 100ms;
+	}
+
 	input[type=text],
 	input[type=search],
 	input[type=password]{
-		border: 1px solid $accentColorLight;
-		border-radius: 8px;
 		height: 50px;
 		width: 100%;
 		padding: 0 16px;
 		font-size: 17px;
 		background: $backColorLight;
+		border: 1px solid $accentColorLight;
+		border-radius: 3px;
+
+		&:focus{
+			border-color: $accentColorNormal;
+		}
 	}
 
-	input[type=submit]{
-		// TODO Udělat generický mixin na tlačítka
-		border: 1px solid $accentColorDark;
-		border-radius: 20px;
-		height: 40px;
-		padding: 0 32px;
-		font-size: 17px;
-		margin-right: auto;
-		background: $accentColorDark;
-		color: $foreColorLight;
-		text-align: center;
-
+	input[type=search]{
+		border-radius: 25px;
+		padding-left: 24px;
 		& + span{
 			display: none;
 		}
 	}
 
+	input[type=submit]{
+		// TODO Udělat generický mixin na tlačítka
+		border: none;
+		border-radius: 20px;
+		height: 40px;
+		padding: 0 32px;
+		font-size: 17px;
+		margin-right: auto;
+		background: $accentColorNormal;
+		color: $foreColorLight;
+		text-align: center;
+		cursor: pointer;
+		transition: 100ms transform;
+
+		box-shadow: inset 0px -2px 0px $accentColorDark;
+
+		& + span{
+			display: none;
+		}
+
+		&:focus{
+			background: $accentColorDark;
+		}
+
+		&:active{
+			background: $accentColorDark;
+			transform: scale(0.95);
+		}
+	}
+
 	input[type=checkbox],
 	input[type=radio]{
-		display: none;
+		width: 0;
+		height: 0;
 
 		& + span{
 			display: flex;
@@ -59,19 +89,39 @@ label{
 
 			&:before{
 				content: '';
-				display: block;
-				width: 24px;
-				height: 24px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 28px;
+				height: 28px;
 				border: 1px solid $accentColorLight;
 				margin-right: 8px;
 				background: $backColorLight;
-				box-shadow: inset 0px 0px 0px 5px $backColorLight;
+				font-family: 'Font Awesome 5 Pro';
+				font-weight: 900;
+				font-size: 14px;
+				color: transparent;
+				transition: 100ms all;
 			}
 		}
 
 		&:checked + span{
 			&:before{
 				background: $accentColorNormal;
+				color: $foreColorLight;
+				border-color: $accentColorDark;
+			}
+		}
+
+		&:focus + span{
+			&:before{
+				border-color: $accentColorNormal;
+			}
+		}
+
+		&:focus:checked + span{
+			&:before{
+				border-color: $backColorDark;
 			}
 		}
 	}
@@ -79,6 +129,18 @@ label{
 	input[type=radio]{
 		& + span:before{
 			border-radius: 100px;
+		}
+
+		&:checked + span:before{
+			background: $foreColorLight;
+			box-shadow: inset 0px 0px 0px 7px $accentColorNormal;
+		}
+	}
+
+	input[type=checkbox]{
+		& + span:before{
+			content: '\f00c';
+			border-radius: 3px;
 		}
 	}
 

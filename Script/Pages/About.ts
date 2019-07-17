@@ -1,3 +1,4 @@
+import { Test } from './../Elements/Test';
 import { Page } from "./Page";
 import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
@@ -23,6 +24,7 @@ export class About extends Page{
 		Navigation.PageTitle = null;
 
 		this.Children.push(
+			new Test(),
 			new WidthLimitedElement(
 				new Header(
 					new Heading(HeadingLevel.Title, `fituška++`),
