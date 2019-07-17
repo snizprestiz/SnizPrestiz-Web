@@ -1,0 +1,16 @@
+.LoginForm{
+	input[type=text]{
+		@include monospaceFont;
+	}
+
+	.Flexbox{
+		align-items: center;
+		max-width: 400px;
+		justify-content: flex-end;
+		max-width: 400px;
+
+		label{
+			margin-left: 16px;
+		}
+	}
+}

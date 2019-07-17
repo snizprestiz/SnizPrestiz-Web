@@ -9,4 +9,8 @@ import { Checkbox } from "./Checkbox";
  */
 export class RadioButton extends Checkbox{
 	protected get Type(): string { return `radio`; }
+
+	public constructor(name?: string, value?: string, label?: string, required: boolean = false) {
+		super(name, value, label, required);
+	}
 }

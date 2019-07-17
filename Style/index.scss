@@ -6,6 +6,7 @@
 @import "pageFooter";
 @import "forms";
 @import "genericMixins";
+@import "Components/LoginForm";
 
 body{
 	font-size: 16px;
@@ -38,8 +39,12 @@ html, body{
 	}
 }
 
-.card{
+.Card{
 	@include cardLarge;
+}
+
+.Flexbox{
+	display: flex;
 }
 
 .WidthLimitedWrapper{

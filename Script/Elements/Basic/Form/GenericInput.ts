@@ -1,4 +1,5 @@
 import { Element } from "../Element";
+import { InputOptions } from "./InputOptions";
 
 /**
  * Obecný vstupní prvek.
@@ -12,7 +13,7 @@ import { Element } from "../Element";
  */
 export abstract class GenericInput extends Element{
 	protected Root: HTMLInputElement;
-	private LabelWrapper: HTMLLabelElement;
+	protected LabelWrapper: HTMLLabelElement;
 	private LabelText: HTMLElement;
 
 	protected get TagName(): string { return `input`; }
@@ -78,12 +79,19 @@ export abstract class GenericInput extends Element{
 		super();
 		this.LabelWrapper = document.createElement(`label`);
 		this.LabelText = document.createElement(`span`);
-		this.LabelWrapper.appendChild(this.LabelText);
 		this.LabelWrapper.appendChild(this.Root);
+		this.LabelWrapper.appendChild(this.LabelText);
 
 		this.Root.type = this.Type;
 		if (name) this.Name = name;
 		if (label) this.Label = label;
 		this.Required = required;
+	}
+
+	public Options(options: InputOptions): this {
+		super.Options(options);
+		if (options.Enabled != null) this.Enabled = options.Enabled;
+		if (options.ReadOnly != null) this.ReadOnly = options.ReadOnly;
+		return this;
 	}
 }

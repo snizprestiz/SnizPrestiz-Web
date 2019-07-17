@@ -3,8 +3,8 @@ import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
 import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
-import { Link } from "../Elements/Basic/Link";
 import { Navigation } from "../Navigation";
+import { LoginForm } from "../Elements/LoginForm";
 
 export class Login extends Page{
 	public get Name(): string { return `Login`; }
@@ -18,8 +18,8 @@ export class Login extends Page{
 				new Header(
 					new Heading(HeadingLevel.Title, `Přihlášení`)
 				),
-				new Link(`/register`, `Vytvořit nový účet`)
-			)
+				new LoginForm(false)
+			).Options({Class: `Card`})
 		);
 	}
 }

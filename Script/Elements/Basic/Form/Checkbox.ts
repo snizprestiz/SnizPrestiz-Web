@@ -1,4 +1,5 @@
 import { GenericInput } from "./GenericInput";
+import { CheckboxOptions } from "./CheckboxOptions";
 
 /**
  * Zaškrtávácí políčko
@@ -21,5 +22,12 @@ export class Checkbox extends GenericInput{
 	public constructor(name?: string, value?: string, label?: string, required: boolean = false) {
 		super(name, label, required);
 		if (value) this.Value = name;
+	}
+
+	public Options(options: CheckboxOptions): this {
+		super.Options(options);
+
+		if (options.Checked != null) this.Checked = options.Checked;
+		return this;
 	}
 }

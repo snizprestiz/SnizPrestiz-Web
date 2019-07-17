@@ -8,3 +8,82 @@
 	color: $accentColorLight;
 	opacity: 1;
 }
+
+/// Vstupní prvky (inputy)
+label{
+	display: flex;
+	flex-direction: column-reverse;
+	max-width: 400px;
+	margin: 8px 0;
+
+	input[type=text],
+	input[type=search],
+	input[type=password]{
+		border: 1px solid $accentColorLight;
+		border-radius: 8px;
+		height: 50px;
+		width: 100%;
+		padding: 0 16px;
+		font-size: 17px;
+		background: $backColorLight;
+	}
+
+	input[type=submit]{
+		// TODO Udělat generický mixin na tlačítka
+		border: 1px solid $accentColorDark;
+		border-radius: 20px;
+		height: 40px;
+		padding: 0 32px;
+		font-size: 17px;
+		margin-right: auto;
+		background: $accentColorDark;
+		color: $foreColorLight;
+		text-align: center;
+
+		& + span{
+			display: none;
+		}
+	}
+
+	input[type=checkbox],
+	input[type=radio]{
+		display: none;
+
+		& + span{
+			display: flex;
+			align-items: center;
+			font-size: inherit;
+			user-select: none;
+			margin: 4px 0;
+			margin-right: auto;
+
+			&:before{
+				content: '';
+				display: block;
+				width: 24px;
+				height: 24px;
+				border: 1px solid $accentColorLight;
+				margin-right: 8px;
+				background: $backColorLight;
+				box-shadow: inset 0px 0px 0px 5px $backColorLight;
+			}
+		}
+
+		&:checked + span{
+			&:before{
+				background: $accentColorNormal;
+			}
+		}
+	}
+
+	input[type=radio]{
+		& + span:before{
+			border-radius: 100px;
+		}
+	}
+
+	span{
+		font-size: 14px;
+		margin-left: 5px;
+	}
+}

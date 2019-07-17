@@ -1,4 +1,5 @@
 import { GenericInput } from "./GenericInput";
+import { TextInputOptions } from "./TextInputOptions";
 
 /**
  * Textové pole
@@ -9,7 +10,7 @@ import { GenericInput } from "./GenericInput";
  */
 export class TextInput extends GenericInput {
 	/**
-	 * Je povoleno autometické vyplňování
+	 * Je povoleno automatické vyplňování
 	 */
 	public get Autocomplete(): boolean {
 		return !(this.Root.autocomplete == `off`);
@@ -28,5 +29,12 @@ export class TextInput extends GenericInput {
 
 	public set Placeholder(text: string) {
 		this.Root.placeholder = text;
+	}
+
+	public Options(options: TextInputOptions): this {
+		super.Options(options);
+		if (options.Placeholder != null) this.Placeholder = options.Placeholder;
+		if (options.Autocomplete != null) this.Autocomplete = options.Autocomplete;
+		return this;
 	}
 }

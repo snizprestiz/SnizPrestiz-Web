@@ -67,6 +67,11 @@ export class Element{
 	 */
 	public get Class(): DOMTokenList { return this.Root.classList; }
 
+	/**
+	 * Registrovat událost DOMu
+	 */
+	public get On() { return this.Root.addEventListener; }
+
 	public constructor(...children: Child[]) {
 		this.Root = document.createElement(this.TagName);
 		if(this.ClassName != String.Empty)

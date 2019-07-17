@@ -35,7 +35,7 @@ export class Navigation{
 	public static CurrentPage: Page = null;
 
 	/**
-	 * Nastavit titulek stránky
+	 * Titulek stránky (název stránky v záložce/záhlaví okna)
 	 */
 	public static set PageTitle(title: string) {
 		document.title = `${(title == null || title == String.Empty) ? `` : `${title} :: `}Sniž prestiž`;
