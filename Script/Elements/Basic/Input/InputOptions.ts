@@ -9,8 +9,5 @@ export interface InputOptions extends ElementOptions{
 	 */
 	Enabled?: boolean;
 
-	/**
-	 * Je tento vstup jen pro čtení
-	 */
-	ReadOnly?: boolean;
+	Value?: string;
 }

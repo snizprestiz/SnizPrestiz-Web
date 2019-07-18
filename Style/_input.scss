@@ -40,6 +40,11 @@ label{
 				font-weight: 700;
 			}
 		}
+
+		&:disabled{
+			color: $foreColorMedium;
+			background: $backColorNormal;
+		}
 	}
 
 	input[type=search]{
@@ -70,6 +75,10 @@ label{
 	input[type=radio]{
 		width: 0;
 		height: 0;
+
+		&:disabled + span{
+			opacity: 0.5;
+		}
 
 		& + span{
 			display: flex;

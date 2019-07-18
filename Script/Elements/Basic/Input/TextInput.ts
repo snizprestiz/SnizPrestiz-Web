@@ -31,10 +31,22 @@ export class TextInput extends GenericInput {
 		this.Root.placeholder = text;
 	}
 
+	/**
+	 * Je tento vstup jen pro čtení
+	 */
+	public get ReadOnly(): boolean {
+		return this.Root.readOnly;
+	}
+
+	public set ReadOnly(val: boolean) {
+		this.Root.readOnly = val;
+	}
+
 	public Options(options: TextInputOptions): this {
 		super.Options(options);
 		if (options.Placeholder != null) this.Placeholder = options.Placeholder;
 		if (options.Autocomplete != null) this.Autocomplete = options.Autocomplete;
+		if (options.ReadOnly != null) this.ReadOnly = options.ReadOnly;
 		return this;
 	}
 }

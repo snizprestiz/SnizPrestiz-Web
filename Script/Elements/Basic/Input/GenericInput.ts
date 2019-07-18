@@ -44,14 +44,6 @@ export abstract class GenericInput extends Element{
 	}
 
 	/**
-	 * Je tento vstup jen pro čtení
-	 */
-	public get ReadOnly(): boolean { return this.Root.readOnly; }
-	public set ReadOnly(val: boolean) {
-		this.Root.readOnly = val;
-	}
-
-	/**
 	 * Název vstupu, používáse při získávání dat z formuláře
 	 */
 	public get Name(): string { return this.Root.name; }
@@ -91,7 +83,7 @@ export abstract class GenericInput extends Element{
 	public Options(options: InputOptions): this {
 		super.Options(options);
 		if (options.Enabled != null) this.Enabled = options.Enabled;
-		if (options.ReadOnly != null) this.ReadOnly = options.ReadOnly;
+		if (options.Value != null) this.Value = options.Value;
 		return this;
 	}
 }

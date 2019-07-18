@@ -13,4 +13,9 @@ export interface TextInputOptions extends InputOptions{
 	 * Dočasný text pole. Zobrazuje se pokud je pole prázdné
 	 */
 	Placeholder?: string;
+
+	/**
+	 * Je tento vstup jen pro čtení
+	 */
+	ReadOnly?: boolean;
 }
