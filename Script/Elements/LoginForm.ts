@@ -40,7 +40,7 @@ export class LoginForm extends Element{
 				).Options({Class: `Button DiscordButton LargeButton`}),
 				new Paragraph(
 					`Přihlášení přes Discord vyžaduje, abyste byly připojení a ověření na `,
-					new Link(`https://discord.gg/Y5AU5Y`, LinkTarget.NewTab, `VUT FIT Discord serveru`),
+					new Link(`https://discord.gg/s4fGpaR`, LinkTarget.NewTab, `VUT FIT Discord serveru`),
 					`.`
 				)
 			).Options({Class: `DiscordLogin`}),

@@ -41,6 +41,9 @@ export class PageRouter{
 		document.title = `${(title == null || title == String.Empty) ? `` : `${title} :: `}Sniž prestiž`;
 	}
 
+	private static _Query: URLSearchParams = new URLSearchParams(location.search);
+	public static get Query(): URLSearchParams { return this._Query; }
+
 	/**
 	 * Změnit stránku podle URL adresy
 	 */
@@ -49,6 +52,7 @@ export class PageRouter{
 
 		do {
 			let path = location.pathname.replace(/\/$/, ``);
+			this._Query = new URLSearchParams(location.search);
 			this.CurrentPage = PageFactory.GetByPath(path);
 		} while (this.CurrentPage.LoadAgain);
 

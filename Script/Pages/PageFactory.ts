@@ -1,3 +1,4 @@
+import { Authorize } from './Authorize';
 import { ElementTest } from './ElementTest';
 import { Page } from "./Page";
 import { AllCourses } from "./AllCourses";
@@ -10,6 +11,7 @@ import { About } from "./About";
 
 export class PageFactory{
 	private static PatternElementTest: RegExp = /^\/element-test$/i;
+	private static PatternAuthorize: RegExp = /^\/authorize$/i;
 	private static PatternAllCourses: RegExp = /^\/all-courses$/i;
 	private static PatternCourse: RegExp = /^\/course\/([^\/]+)$/i;
 	private static PatternCourseStats: RegExp = /^\/course\/([^\/]+)\/stats$/i;
@@ -44,6 +46,8 @@ export class PageFactory{
 		else if ((match = path.match(this.PatternRegister)) != null)
 			return new Register();
 		// else if ((match = path.match(this.PatternAccount)) != null)
+		else if ((match = path.match(this.PatternAuthorize)) != null)
+			return new Authorize();
 		else if ((match = path.match(this.PatternElementTest)) != null)
 			return new ElementTest();
 		else if (path == String.Empty)

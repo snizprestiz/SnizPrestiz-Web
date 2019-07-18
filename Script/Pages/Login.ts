@@ -19,7 +19,7 @@ export class Login extends Page{
 					new Heading(HeadingLevel.Title, `Přihlášení`)
 				),
 				new LoginForm(false)
-			).Options({Class: `Card`})
+			).Options({Class: `Card Small`})
 		);
 	}
 }

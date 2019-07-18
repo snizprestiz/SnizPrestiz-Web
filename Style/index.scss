@@ -7,7 +7,10 @@
 @import "input";
 @import "genericMixins";
 @import "buttons";
+
 @import "Components/LoginForm";
+
+@import "Pages/Authorize";
 
 body{
 	font-size: 16px;
@@ -56,6 +59,15 @@ html, body{
 		max-width: 1200px;
 		width: 100%;
 		margin: 0 auto;
+
+		&.Small{
+			max-width: 800px;
+		}
+
+		&.AutoWidth{
+			max-width: auto;
+			width: auto;
+		}
 	}
 }
 

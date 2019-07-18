@@ -28,6 +28,10 @@ export class PageNavigation extends NavigationElement{
 		this.Children.splice(0, this.Children.length);
 
 		this.Children.push(
+			new Link(`/element-test`, LinkTarget.NewTab,
+				new Icon(`code`),
+				`Dev`
+			),
 			new Link(`https://github.com/su-fit-vut/student-voice`, LinkTarget.NewTab,
 				new Icon(`comments`),
 				`Hlas studentů`
