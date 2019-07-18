@@ -44,6 +44,9 @@ export class TextInput extends GenericInput {
 
 	public Options(options: TextInputOptions): this {
 		super.Options(options);
+
+		this.LabelWrapper.classList.add(`TextInput`);
+
 		if (options.Placeholder != null) this.Placeholder = options.Placeholder;
 		if (options.Autocomplete != null) this.Autocomplete = options.Autocomplete;
 		if (options.ReadOnly != null) this.ReadOnly = options.ReadOnly;

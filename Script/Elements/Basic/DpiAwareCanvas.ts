@@ -1,4 +1,4 @@
-import { Element } from "./Basic/Element";
+import { Element } from "./Element";
 
 /**
  * Canvas prvek, který korektně pracuje s DPI displejů

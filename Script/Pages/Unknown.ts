@@ -1,3 +1,4 @@
+import { PageRouter } from './../PageRouter';
 import { Page } from "./Page";
 import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
@@ -5,14 +6,13 @@ import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
 import { Paragraph } from "../Elements/Basic/Paragraph";
 import { Link } from "../Elements/Basic/Link";
-import { Navigation } from "../Navigation";
 
 export class Unknown extends Page{
 	public get Name(): string { return `Unknown`; }
 
 	public constructor() {
 		super();
-		Navigation.PageTitle = `Stránka nenalezena`;
+		PageRouter.PageTitle = `Stránka nenalezena`;
 
 		this.Children.push(
 			new WidthLimitedElement(

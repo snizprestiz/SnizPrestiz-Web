@@ -9,14 +9,22 @@
 	opacity: 1;
 }
 
+form{
+	display: flex;
+	flex-direction: column;
+}
+
 /// Vstupní prvky (inputy)
 label{
-	display: flex;
+	display: inline-flex;
 	flex-direction: column-reverse;
-	max-width: 400px;
 	margin-bottom: 16px;
 	user-select: none;
 	position: relative;
+
+	&.Checkbox{
+		margin-right: auto;
+	}
 
 	& > *{
 		transition: all 100ms;
@@ -33,7 +41,12 @@ label{
 		border: 1px solid $accentColorLight;
 		border-radius: 3px;
 
-		&:focus{
+		&:not(:disabled):not(:focus):hover,
+		&:read-only:hover{
+			border-color: $accentColorNormal;
+		}
+
+		&:not(:read-only):focus{
 			border-color: $accentColorDark;
 
 			& + span{
@@ -60,11 +73,13 @@ label{
 			top: 0;
 			height: 100%;
 			margin: 0;
-			padding-right: 24px;
+			padding-right: 12px;
 			font-size: 20px;
 			border-top-right-radius: 25px;
 			border-bottom-right-radius: 25px;
+			text-decoration: none !important;
 
+			.CanFocus &:focus i:before,
 			&:hover i:before{
 				font-weight: 900;
 			}
@@ -77,7 +92,7 @@ label{
 		height: 0;
 
 		&:disabled + span{
-			opacity: 0.5;
+			opacity: 0.33;
 		}
 
 		& + span{
@@ -110,6 +125,18 @@ label{
 				background: $accentColorNormal;
 				color: $foreColorLight;
 				border-color: $accentColorDark;
+			}
+		}
+
+		&:not(:disabled):hover + span{
+			&:before{
+				border-color: $accentColorNormal;
+			}
+		}
+
+		&:not(:disabled):checked:hover + span{
+			&:before{
+				border-color: $foreColorNormal;
 			}
 		}
 

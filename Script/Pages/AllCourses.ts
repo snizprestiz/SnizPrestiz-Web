@@ -1,10 +1,10 @@
+import { PageRouter } from './../PageRouter';
 import { Page } from "./Page";
 import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
 import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
 import { Element } from "../Elements/Basic/Element";
-import { Navigation } from "../Navigation";
 import { CourseListItem } from "../Elements/CourseListItem";
 
 export class AllCourses extends Page{
@@ -15,7 +15,7 @@ export class AllCourses extends Page{
 
 	public constructor() {
 		super();
-		Navigation.PageTitle = `Seznam předmětů`;
+		PageRouter.PageTitle = `Seznam předmětů`;
 
 		this.MyCoursesContainer = new Element().Options({Class: `CoursesContainer MyCourses`});
 		this.AllCoursesContainer = new Element().Options({ Class: `CoursesContainer AllCourses` });

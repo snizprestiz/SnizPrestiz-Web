@@ -27,6 +27,8 @@ export class Checkbox extends GenericInput{
 	public Options(options: CheckboxOptions): this {
 		super.Options(options);
 
+		this.LabelWrapper.classList.add(`Checkbox`);
+
 		if (options.Checked != null) this.Checked = options.Checked;
 		return this;
 	}

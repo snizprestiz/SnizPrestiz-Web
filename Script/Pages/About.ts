@@ -1,10 +1,9 @@
-import { Test } from './../Elements/Test';
+import { PageRouter } from './../PageRouter';
 import { Page } from "./Page";
 import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
 import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
-import { Navigation } from "../Navigation";
 import { LoggedUser } from "../LoggedUser";
 import { Paragraph } from "../Elements/Basic/Paragraph";
 import { LoginForm } from "../Elements/LoginForm";
@@ -21,10 +20,9 @@ export class About extends Page{
 			return;
 		}
 
-		Navigation.PageTitle = null;
+		PageRouter.PageTitle = null;
 
 		this.Children.push(
-			new Test(),
 			new WidthLimitedElement(
 				new Header(
 					new Heading(HeadingLevel.Title, `fituška++`),

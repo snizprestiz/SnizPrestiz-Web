@@ -22,13 +22,13 @@ export class Button extends Element{
 		this.Root.type = v ? `submit` : `button`;
 	}
 
-	public get Primary(): boolean {
-		return this.Root.classList.contains(`PrimaryButton`);
+	public get Secondary(): boolean {
+		return this.Root.classList.contains(`SecondaryButton`);
 	}
 
-	public set Primary(v: boolean) {
-		if(v) this.Root.classList.add(`PrimaryButton`);
-		else this.Root.classList.remove(`PrimaryButton`);
+	public set Secondary(v: boolean) {
+		if(v) this.Root.classList.add(`SecondaryButton`);
+		else this.Root.classList.remove(`SecondaryButton`);
 	}
 
 	public get Destructive(): boolean {
@@ -50,7 +50,7 @@ export class Button extends Element{
 
 		if (options.Enabled != null) this.Enabled = options.Enabled;
 		if (options.Submit != null) this.Submit = options.Submit;
-		if (options.Primary != null) this.Primary = options.Primary;
+		if (options.Secondary != null) this.Secondary = options.Secondary;
 		if (options.Destructive != null) this.Destructive = options.Destructive;
 
 		return this;

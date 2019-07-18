@@ -27,7 +27,7 @@ export class SearchInput extends TextInput {
 		if (includeButton) {
 			this.LabelWrapper.appendChild(
 				new Button(
-					{ Submit: true, Tooltip: `Vyhledat` },
+					{ Submit: true, Secondary: true, Tooltip: `Vyhledat` },
 					new Icon(`search`)
 				).DOM
 			);

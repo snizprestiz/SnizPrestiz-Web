@@ -1,9 +1,9 @@
+import { PageRouter } from './PageRouter';
 import { KeyboardFocusOnly } from './KeyboardFocusOnly';
 import { PageHeader } from "./Elements/PageHeader";
 import { MainContent } from "./Elements/MainContent";
 import { PageFooter } from "./Elements/PageFooter";
 import { LoggedUser } from "./LoggedUser";
-import { Navigation } from "./Navigation";
 
 /**
  * Hlavní třída spuštění stránky
@@ -20,7 +20,7 @@ export class Main{
 		);
 
 		KeyboardFocusOnly.Activate();
-		Navigation.Initialize();
+		PageRouter.Initialize();
 	}
 }
 

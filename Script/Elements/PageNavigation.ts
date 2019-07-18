@@ -1,10 +1,10 @@
+import { PageRouter } from './../PageRouter';
 import { Navigation as NavigationElement} from "./Basic/Navigation";
 import { LoggedUser } from "../LoggedUser";
 import { Icon } from "./Basic/Icon";
 import { Link } from "./Basic/Link";
 import { LinkTarget } from "./Basic/LinkTarget";
 import { Observer } from "../Observer";
-import { Navigation } from "../Navigation";
 import { Register } from "../Pages/Register";
 import { Login } from "../Pages/Login";
 
@@ -39,10 +39,10 @@ export class PageNavigation extends NavigationElement{
 			return;
 		}
 
-		if (!(Navigation.CurrentPage instanceof Login))
+		if (!(PageRouter.CurrentPage instanceof Login))
 			this.Children.push(new Link(`/login`, new Icon(`sign-in-alt`), `Přihlásit se`));
 
-		if (!(Navigation.CurrentPage instanceof Register))
+		if (!(PageRouter.CurrentPage instanceof Register))
 			this.Children.push(new Link(`/register`, new Icon(`user-plus`), `Vytvořit účet`));
 	}
 }

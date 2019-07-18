@@ -1,5 +1,5 @@
 import { DpiAwareCanvas } from "./DpiAwareCanvas";
-import { Point } from "../Types/Point";
+import { Point } from "./Point";
 
 /**
  * Canvas prvek, který korektně pracuje s DPI displejů a reaguje na myš

@@ -10,9 +10,9 @@ export interface ButtonOptions extends ElementOptions{
 	Enabled?: boolean;
 
 	/**
-	 * Jedná se o hlavní tlačítko
+	 * Jedná se o vedlejší tlačítko
 	 */
-	Primary?: boolean;
+	Secondary?: boolean;
 
 	/**
 	 * Tlačítko odešle data formuláře

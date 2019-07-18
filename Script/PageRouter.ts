@@ -6,7 +6,7 @@ import { String } from "typescript-string-operations";
 /**
  * Navigace mezi stránkami
  */
-export class Navigation{
+export class PageRouter{
 	/**
 	 * Inicializace navigace
 	 */

@@ -1,9 +1,9 @@
+import { PageRouter } from './../PageRouter';
 import { Page } from "./Page";
 import { WidthLimitedElement } from "../Elements/Basic/WidthLimitedElement";
 import { Header } from "../Elements/Basic/Header";
 import { Heading } from "../Elements/Basic/Heading";
 import { HeadingLevel } from "../Elements/Basic/HeadingLevel";
-import { Navigation } from "../Navigation";
 import { LoginForm } from "../Elements/LoginForm";
 
 export class Login extends Page{
@@ -11,7 +11,7 @@ export class Login extends Page{
 
 	public constructor() {
 		super();
-		Navigation.PageTitle = `Přihlášení`;
+		PageRouter.PageTitle = `Přihlášení`;
 
 		this.Children.push(
 			new WidthLimitedElement(

@@ -1,6 +1,6 @@
 import { GraphDataByYear } from "./GraphDataByYear";
 import { String } from "typescript-string-operations";
-import { DpiAwareCanvasInteractive } from "../Elements/DpiAwareCanvasInteractive";
+import { DpiAwareCanvasInteractive } from "../Elements/Basic/DpiAwareCanvasInteractive";
 
 /**
  * Hlavní graf celkové úspěsnoti předmětu

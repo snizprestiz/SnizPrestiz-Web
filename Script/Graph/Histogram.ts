@@ -1,4 +1,4 @@
-import { DpiAwareCanvas } from "../Elements/DpiAwareCanvas";
+import { DpiAwareCanvas } from "../Elements/Basic/DpiAwareCanvas";
 import { GraphData, DistributionLabels } from "./GraphData";
 
 /**
