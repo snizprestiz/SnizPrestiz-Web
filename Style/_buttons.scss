@@ -1,0 +1,69 @@
+$dangerColorNormal: rgb(231, 76, 60);
+$dangerColorDark: rgb(192, 57, 43);
+
+button{
+	height: auto;
+	margin: 8px;
+	border: none;
+	font-family: inherit;
+	font-size: 17px;
+	text-align: center;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	transition: 100ms all;
+
+	.CanFocus &:focus,
+	&:hover{
+		text-decoration: underline;
+	}
+
+	&:disabled{
+		opacity: 0.5;
+		cursor: default;
+		text-decoration: none;
+	}
+
+	&:active{
+		transform: scale(0.95);
+	}
+
+	&.DestructiveButton{
+		color: $dangerColorDark;
+	}
+
+	&.PrimaryButton{
+		height: 40px;
+		min-width: 120px;
+		margin: 0;
+		padding: 0 24px;
+		padding-bottom: 2px;
+		border-radius: 20px;
+		background: $accentColorNormal;
+		color: $foreColorLight;
+		text-decoration: none;
+
+		.CanFocus &:focus,
+		&:active{
+			background: $accentColorDark;
+			text-decoration: none;
+		}
+
+		&:not(:disabled){
+			box-shadow: inset 0px -2px 0px $accentColorDark;
+		}
+
+		&.DestructiveButton{
+			background: $dangerColorNormal;
+
+			.CanFocus &:focus,
+			&:active{
+				background: $dangerColorDark;
+			}
+
+			&:not(:disabled){
+				box-shadow: inset 0px -2px 0px $dangerColorDark;
+			}
+		}
+	}
+}

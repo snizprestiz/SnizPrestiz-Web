@@ -1,3 +1,5 @@
+import { Icon } from './../Icon';
+import { Button } from './Button';
 import { TextInput } from "./TextInput";
 
 /**
@@ -18,8 +20,17 @@ export class SearchInput extends TextInput {
 		this.Placeholder = v;
 	}
 
-	public constructor(name?: string, label?: string, required: boolean = false) {
+	public constructor(name?: string, label?: string, required: boolean = false, includeButton: boolean = false) {
 		super(name, label, required);
 		this.Autocomplete = false;
+
+		if (includeButton) {
+			this.LabelWrapper.appendChild(
+				new Button(
+					{ Submit: true, Tooltip: `Vyhledat` },
+					new Icon(`search`)
+				).DOM
+			);
+		}
 	}
 }

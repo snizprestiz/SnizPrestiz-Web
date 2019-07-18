@@ -1,3 +1,4 @@
+import { KeyboardFocusOnly } from './KeyboardFocusOnly';
 import { PageHeader } from "./Elements/PageHeader";
 import { MainContent } from "./Elements/MainContent";
 import { PageFooter } from "./Elements/PageFooter";
@@ -18,6 +19,7 @@ export class Main{
 			new PageFooter().DOM
 		);
 
+		KeyboardFocusOnly.Activate();
 		Navigation.Initialize();
 	}
 }

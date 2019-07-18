@@ -1,6 +1,5 @@
-import { Form } from "./Basic/Form/Form";
-import { SearchInput } from "./Basic/Form/SearchInput";
-import { SubmitButton } from "./Basic/Form/SubmitButton";
+import { Form } from "./Basic/Input/Form";
+import { SearchInput } from "./Basic/Input/SearchInput";
 import { String } from "typescript-string-operations";
 
 /**
@@ -19,10 +18,10 @@ export class HeaderSearch extends Form{
 		this.Input.DOM.onkeyup = (): void => this.OnSearch(this.Input.Value);
 
 		this.Children.push(
-			this.Input,
+			this.Input/*,
 			new SubmitButton(`\uf002`).Options(
 				{ Tooltip: `Vyhledat` }
-			)
+			)*/
 		);
 	}
 

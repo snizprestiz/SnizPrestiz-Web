@@ -60,7 +60,7 @@ export class CourseStatistics extends Element{
 		let histogram = new Histogram(data);
 		this.YearlyGraphs.Children.push(histogram);
 		//this.YearlyGraphs.insertAdjacentHTML("afterbegin", `<h3>${data.Year}</h3>`)
-		histogram.ResizeEvent();
+		histogram.OnResize();
 	}
 
 	private LoadGraphData(year: number = 2018): void {

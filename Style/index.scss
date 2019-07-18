@@ -4,8 +4,9 @@
 @import "typography";
 @import "pageHeader";
 @import "pageFooter";
-@import "forms";
+@import "input";
 @import "genericMixins";
+@import "buttons";
 @import "Components/LoginForm";
 
 body{
@@ -120,4 +121,15 @@ html, body{
 	vertical-align: middle;
 	display: inline;
 	@include monospaceFont;
+}
+
+.Test{
+	.Flexbox{
+		flex-direction: column;
+		align-items: flex-start;
+
+		& > *{
+			margin-top: 8px;
+		}
+	}
 }

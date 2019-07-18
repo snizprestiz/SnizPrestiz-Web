@@ -1,12 +1,11 @@
+import { Button } from './Basic/Input/Button';
 import { Element } from "./Basic/Element";
 import { Link } from "./Basic/Link";
 import { Paragraph } from "./Basic/Paragraph";
-import { Form } from "./Basic/Form/Form";
-import { TextInput } from "./Basic/Form/TextInput";
-import { PasswordInput } from "./Basic/Form/PasswordInput";
-import { SubmitButton } from "./Basic/Form/SubmitButton";
-import { Checkbox } from "./Basic/Form/Checkbox";
-import { RadioButton } from "./Basic/Form/RadioButton";
+import { Form } from "./Basic/Input/Form";
+import { TextInput } from "./Basic/Input/TextInput";
+import { PasswordInput } from "./Basic/Input/PasswordInput";
+import { Checkbox } from "./Basic/Input/Checkbox";
 import { LinkTarget } from "./Basic/LinkTarget";
 import { Image } from "./Basic/Image";
 import { Heading } from "./Basic/Heading";
@@ -51,7 +50,7 @@ export class LoginForm extends Element{
 				new Checkbox(`stayLogged`, `true`, `Zůstat přihlášen`),
 				new Flexbox(
 					new Link(`/register`, `Vytvořit nový účet`),
-					new SubmitButton(`Přihlásit se`)
+					new Button({Submit: true, Primary: true}, `Přihlásit se`)
 				)
 			),
 		);
