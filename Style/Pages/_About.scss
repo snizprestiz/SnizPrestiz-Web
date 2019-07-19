@@ -18,11 +18,26 @@
 	}
 }
 
+@keyframes PageAboutHeaderShow{
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+
 .Page.About{
 	header{
 		color: $accentColorLight;
 		height: 220px;
 		margin-top: 100px;
+
+		//animation: PageAboutHeaderShow 800ms cubic-bezier(0.165, 0.84, 0.44, 1) 400ms backwards;
+
+		a:hover, .CanFocus & a:focus{
+			color: $foreColorLight;
+		}
+
+		.DiscordButton:active, .CanFocus & .DiscordButton:focus{
+			background: $discordColorLight;
+		}
 
 		.DiscordLogin > a:last-of-type{
 			margin-top: 12px;
