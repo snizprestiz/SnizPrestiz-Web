@@ -42,10 +42,13 @@ export class TextInput extends GenericInput {
 		this.Root.readOnly = val;
 	}
 
+	public constructor(name?: string, label?: string, required?: boolean) {
+		super(name, label, required);
+		this.LabelWrapper.classList.add(`TextInput`);
+	}
+
 	public Options(options: TextInputOptions): this {
 		super.Options(options);
-
-		this.LabelWrapper.classList.add(`TextInput`);
 
 		if (options.Placeholder != null) this.Placeholder = options.Placeholder;
 		if (options.Autocomplete != null) this.Autocomplete = options.Autocomplete;

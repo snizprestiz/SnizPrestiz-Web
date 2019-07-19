@@ -1,3 +1,4 @@
+import { Child } from './../Elements/Basic/Child';
 import { Element } from "../Elements/Basic/Element";
 
 /**
@@ -34,5 +35,10 @@ export abstract class Page extends Element{
 	 */
 	public get LoadAgain(): boolean {
 		return this._LoadAgain;
+	}
+
+	public constructor(...children: Child[]) {
+		super(...children);
+		document.body.classList.remove(`LargeHeader`);
 	}
 }

@@ -21,13 +21,13 @@ export class Checkbox extends GenericInput{
 
 	public constructor(name?: string, value?: string, label?: string, required: boolean = false) {
 		super(name, label, required);
+		this.LabelWrapper.classList.add(`Checkbox`);
 		if (value) this.Value = name;
 	}
 
 	public Options(options: CheckboxOptions): this {
 		super.Options(options);
 
-		this.LabelWrapper.classList.add(`Checkbox`);
 
 		if (options.Checked != null) this.Checked = options.Checked;
 		return this;

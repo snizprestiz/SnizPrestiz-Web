@@ -16,7 +16,7 @@ export class PageLogo extends Link{
 	 * Různé variace loga
 	 */
 	public static AvailableTexts = [
-		`prestiz--;`, // C-like jazyky
+		/*`prestiz--;`, // C-like jazyky
 		`dec [prestiz]`, // Assembly
 		`sub [prestiz] 1`, // Assembly
 		`prestiz -= 1;`, // C-like jazyky
@@ -25,9 +25,9 @@ export class PageLogo extends Link{
 		`--prestiz;`, // C-like jazyky
 		`let "prestiz--"`, // Bash
 		`(decf prestiz)`, // LISP
-		`(- prestiz 1)`, // LISP
+		`(- prestiz 1)`, // LISP*/
 		`prestiz <= prestiz - 1;`, // VHDL
-		`prestiz += 0xFFFFFFFF;` // C (přetečení)
+		//`prestiz += 0xFFFFFFFF;` // C (přetečení)
 	];
 
 	/**

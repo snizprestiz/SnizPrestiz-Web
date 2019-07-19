@@ -37,12 +37,13 @@ export class LoginForm extends Element{
 				new Link(`https://discordapp.com/api/oauth2/authorize?client_id=600429303376773134&redirect_uri=http%3A%2F%2Fsnizprestiz.eu%2Fauthorize&response_type=code&scope=identify&prompt=none`,
 					new Icon(`discord`, IconType.Brand),
 					`Přihlásit se přes Discord`
-				).Options({Class: `Button DiscordButton LargeButton`}),
+				).Options({ Class: `Button DiscordButton LargeButton` }),
 				new Paragraph(
 					`Přihlášení přes Discord vyžaduje, abyste byly připojení a ověření na `,
 					new Link(`https://discord.gg/s4fGpaR`, LinkTarget.NewTab, `VUT FIT Discord serveru`),
 					`.`
-				)
+				),
+				new Link(`/login`, `Přihlásit se lokálním účtem`)
 			).Options({Class: `DiscordLogin`}),
 			new Form(
 				new Heading(HeadingLevel.Subsection, `Přihlášení lokálním účtem`), // TODO přejmenovat

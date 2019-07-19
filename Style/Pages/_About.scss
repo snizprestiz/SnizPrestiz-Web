@@ -1,0 +1,31 @@
+@import '../colorPalette';
+
+.Body-About{
+	.PageHeader{
+		&-wrapper{
+			padding-bottom: 400px;
+			//margin-bottom: -400px;
+		}
+	}
+
+	.PageLogo{
+		font-size: 48px;
+		transform: translateY(170px);
+
+		&:before{
+			font-size: 18px;
+		}
+	}
+}
+
+.Page.About{
+	header{
+		color: $accentColorLight;
+		height: 220px;
+		margin-top: 100px;
+
+		.DiscordLogin > a:last-of-type{
+			margin-top: 12px;
+		}
+	}
+}

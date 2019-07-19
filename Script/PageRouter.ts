@@ -59,5 +59,10 @@ export class PageRouter{
 		console.log(`Navigated to: ${this.CurrentPage.Name}`);
 
 		Observer.PageChanged(this.CurrentPage, prevPage);
+
+		if(prevPage)
+			document.body.classList.remove(`Body-${prevPage.Name}`);
+
+		document.body.classList.add(`Body-${this.CurrentPage.Name}`);
 	}
 }

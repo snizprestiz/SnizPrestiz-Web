@@ -13,6 +13,8 @@ export class Login extends Page{
 		super();
 		PageRouter.PageTitle = `Přihlášení`;
 
+		document.body.classList.add(`LargeHeader`);
+
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(

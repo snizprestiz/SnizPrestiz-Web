@@ -27,6 +27,7 @@ export class Authorize extends Page{
 	public constructor() {
 		super();
 		PageRouter.PageTitle = `Autorizace Discord účtu`;
+		document.body.classList.add(`LargeHeader`);
 
 		this.Children.push(
 			new WidthLimitedElement(

@@ -131,4 +131,8 @@ button, .Button{
 	& > *{
 		margin-left: 24px !important;
 	}
+
+	label.Checkbox + &{
+		margin-top: 0;
+	}
 }

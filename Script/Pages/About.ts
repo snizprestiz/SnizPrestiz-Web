@@ -21,11 +21,11 @@ export class About extends Page{
 		}
 
 		PageRouter.PageTitle = null;
+		document.body.classList.add(`LargeHeader`);
 
 		this.Children.push(
 			new WidthLimitedElement(
 				new Header(
-					new Heading(HeadingLevel.Title, `fituška++`),
 					new LoginForm()
 				),
 				new Heading(HeadingLevel.Section, `Řazení předmětů, které dává smysl`),

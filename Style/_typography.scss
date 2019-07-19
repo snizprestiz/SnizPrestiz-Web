@@ -32,6 +32,6 @@ a{
 	text-decoration: underline;
 }
 
-a:hover, a:focus{
+a:hover, .CanFocus a:focus{
 	color: $accentColorDark;
 }

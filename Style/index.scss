@@ -2,14 +2,15 @@
 @import "colorPalette";
 @import "noscript";
 @import "typography";
-@import "pageHeader";
 @import "pageFooter";
 @import "input";
 @import "genericMixins";
 @import "buttons";
 
+@import "Components/PageHeader";
 @import "Components/LoginForm";
 
+@import "Pages/About";
 @import "Pages/Authorize";
 
 body{
@@ -37,6 +38,7 @@ html, body{
 	align-items: flex-start;
 	margin-top: 40px;
 	margin-bottom: 100px;
+	position: relative;
 
 	& > *{
 		flex-grow: 1;
