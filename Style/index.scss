@@ -10,6 +10,7 @@
 @import "Components/PageHeader";
 @import "Components/LoginForm";
 
+@import "Pages/Login";
 @import "Pages/About";
 @import "Pages/Authorize";
 
@@ -20,6 +21,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	overflow-y: overlay;
 	@include serifFont;
 }
 
@@ -64,6 +66,10 @@ html, body{
 
 		&.Small{
 			max-width: 800px;
+		}
+
+		&.ExtraSmall{
+			max-width: 600px;
 		}
 
 		&.AutoWidth{

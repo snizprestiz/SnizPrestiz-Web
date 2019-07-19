@@ -1,0 +1,12 @@
+.Page.Login{
+	text-align: center;
+
+	.DiscordButton + p{
+		font-size: 0.9em;
+		color: $foreColorMedium;
+	}
+
+	form{
+		text-align: left;
+	}
+}

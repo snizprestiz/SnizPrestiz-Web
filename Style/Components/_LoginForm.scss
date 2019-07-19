@@ -3,9 +3,8 @@
 		@include monospaceFont;
 	}
 
-	&.CollapseLocalLogin{
-		form{
-			display: none;
-		}
+	form{
+		max-width: 400px;
+		margin: auto;
 	}
 }
